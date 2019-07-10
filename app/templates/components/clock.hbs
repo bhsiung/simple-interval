@@ -1,1 +1,7 @@
 {{@config.name}}
+{{this.statusText}}
+<p class="clock-component__round">round {{this.currentRound}} of {{@config.round}}</p>
+<p class="clock-component__timer">{{this.second}}</p>
+<button type="button" onclick={{this.handleStart}}>Start</button>
+<button type="button" onclick={{this.handlePause}}>Pause</button>
+<button type="button" onclick={{this.handleStop}}>Stop</button>
