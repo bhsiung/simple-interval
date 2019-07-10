@@ -29,6 +29,10 @@ export default class ClockComponent extends Component {
     return (this.timeRemaining / 1000).toFixed(2).replace(/\./, ':')
   }
 
+  get shouldShowTimer() {
+    return this.started && !this.completed
+  }
+
   get statusText() {
     const timerState = this.timers[this.timerIndex].state
 
@@ -57,49 +61,59 @@ export default class ClockComponent extends Component {
     this.timeRemaining = this.timers[0].duration
   }
 
-  start() {
-    // use runloop
-    this.timer = setInterval(() => {
-      // still running the same timer
-      if (this.timeRemaining > 0) {
-        this.timeRemaining -= TIMER_INTERVAL
-        return
-      }
-      // the last round
-      if (this.timerIndex >= this.timers.length - 1) {
-        clearInterval(this.timer)
-        this.completed = true
-        return
-      }
-      // shift to the next timer
-      if (this.timers[this.timerIndex].state === STATE_REST) this.currentRound++
-      this.timerIndex++
-      this.timeRemaining = this.timers[this.timerIndex].duration
-    }, TIMER_INTERVAL)
+  loop() {
+    // still running the same timer
+    if (this.timeRemaining > 0) {
+      this.timeRemaining -= TIMER_INTERVAL
+      return
+    }
+    // the last round
+    if (this.timerIndex >= this.timers.length - 1) {
+      clearInterval(this.timer)
+      this.completed = true
+      return
+    }
+    // shift to the next timer
+    if (this.timers[this.timerIndex].state === STATE_REST) this.currentRound++
+    this.timerIndex++
+    this.timeRemaining = this.timers[this.timerIndex].duration
   }
 
   @action
-  handleStart() {
+  handleStart(e) {
+    e.stopPropagation();
+    e.preventDefault();
     if (this.completed) this.resetTimer()
 
     if (!this.started || this.paused) {
       this.started = true
       this.paused = false
-      this.start()
+      // use runloop
+      this.timer = setInterval(this.loop.bind(this), TIMER_INTERVAL)
     }
+    return false;
   }
 
   @action
-  handleStop() {
+  handleStop(e) {
+    e.preventDefault();
+    e.stopPropagation();
     this.started = false
     this.paused = false
     clearInterval(this.timer)
     this.resetTimer()
+    return false;
   }
 
   @action
-  handlePause() {
-    this.paused = true
-    clearInterval(this.timer)
+  handleMainAction(e) {
+    if (!this.shouldShowTimer) return this.handleStart(e);
+    if (this.paused) {
+      this.paused = false;
+      this.timer = setInterval(this.loop.bind(this), TIMER_INTERVAL)
+    } else {
+      this.paused = true
+      clearInterval(this.timer)
+    }
   }
 }

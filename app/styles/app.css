@@ -1,0 +1,42 @@
+body {
+  font-family: 'Share', cursive;
+  background: #F7B09F;
+  color: #fff;
+  overflow: auto;
+  margin: 0;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.clock-component {
+  width: 30vh;
+  height: 30vh;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  min-height: 300px;
+  flex-flow: column;
+  margin-bottom: 5vh;
+}
+.clock-component__round,
+.clock-component__timer {
+  margin: 0 0 10px;
+}
+.clock-component__timer {
+  font-size: 60px;
+}
+.clock-component__toggle {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}

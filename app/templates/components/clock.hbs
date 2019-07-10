@@ -1,7 +1,11 @@
-{{@config.name}}
-{{this.statusText}}
-<p class="clock-component__round">round {{this.currentRound}} of {{@config.round}}</p>
-<p class="clock-component__timer">{{this.second}}</p>
-<button type="button" onclick={{this.handleStart}}>Start</button>
-<button type="button" onclick={{this.handlePause}}>Pause</button>
-<button type="button" onclick={{this.handleStop}}>Stop</button>
+<div class="clock-component" data-status="{{status}}" onclick={{this.handleMainAction}}>
+  <h2 class="clock-component__title">{{@config.name}}</h2>
+  <p class="clock-component__status">{{this.statusText}}</p>
+  {{#if this.shouldShowTimer}}
+    <p class="clock-component__round">round {{this.currentRound}} of {{@config.round}}</p>
+    <p class="clock-component__timer">{{this.second}}</p>
+    <button type="button" onclick={{this.handleStop}}>Reset</button>
+  {{else}}
+    <button type="button" onclick={{this.handleStart}}>Start</button>
+  {{/if}}
+</div>
