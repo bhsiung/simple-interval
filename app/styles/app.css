@@ -1,11 +1,21 @@
+/*
+ * color
+ * https://paletton.com/#uid=70g0A0kg5E71w+S9YT7kKrMnTfQ
+ */
 body {
   font-family: 'Share', cursive;
-  background: #F7B09F;
+  background: #333;
   color: #fff;
   overflow: auto;
   margin: 0;
 }
 
+h1 {
+  margin: 0;
+  color: #fff;
+  background: #35976F;
+  padding: .5em;
+}
 .app {
   height: 100vh;
   display: flex;
@@ -14,9 +24,11 @@ body {
   flex-direction: column;
 }
 .clock-component {
+  cursor: pointer;
+  transition: background 300ms ease-out, color 300ms ease-out;
   width: 30vh;
   height: 30vh;
-  background: #333;
+  background: #FFA57F;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -25,10 +37,46 @@ body {
   min-height: 300px;
   flex-flow: column;
   margin-bottom: 5vh;
+  color: #333;
 }
-.clock-component__round,
-.clock-component__timer {
-  margin: 0 0 10px;
+
+.clock-component[data-status="STATE_WORKOUT"] {
+  background: #DDA84E;
+}
+.clock-component[data-status="STATE_PREP"] {
+  color: #fff;
+  background: #3B6092;
+}
+.clock-component[data-status="STATE_REST"] {
+  background: #35976F;
+}
+.clock-component h2,
+.clock-component p {
+  margin: 0;
+}
+.clock-component button {
+  cursor: pointer;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+.clock-component .clock-component__title {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.clock-component__meta {
+  width: 70%;
+  text-align: center;
+}
+.clock-component__status {
+  font-size: 40px;
+}
+.clock-component__round::before {
+  content: '|';
+  margin: 0 .2em;
+}
+.clock-component .clock-component__timer {
+  margin: 13px 0 10px;
 }
 .clock-component__timer {
   font-size: 60px;

@@ -33,15 +33,19 @@ export default class ClockComponent extends Component {
     return this.started && !this.completed
   }
 
+  get timerState() {
+    return this.timers[this.timerIndex].state
+  }
+
   get statusText() {
     const timerState = this.timers[this.timerIndex].state
 
     if (this.paused) return 'Pause'
-    if (this.completed) return 'Great job!'
-    if (!this.started) return 'Lets work out!'
-    if (timerState === STATE_PREP) return "Get ready..."
-    else if (timerState === STATE_REST) return "Rest"
-    else if (timerState === STATE_WORKOUT) return "Go"
+    if (this.completed) return 'GREAT JOB!'
+    if (!this.started) return 'LET\' GO'
+    if (timerState === STATE_PREP) return "GET READY..."
+    else if (timerState === STATE_REST) return "REST"
+    else if (timerState === STATE_WORKOUT) return "GO GO GO!!"
     else throw new Error('something wrong')
   }
 
