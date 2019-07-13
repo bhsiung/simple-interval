@@ -48,6 +48,15 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 Specify what it takes to deploy your app.
 
+### TODOs
+- storybook
+- svg
+- pwa
+- redux
+- audio
+- fastboot
+- css module
+
 ## Further Reading / Useful Links
 
 * [ember.js](https://emberjs.com/)
