@@ -25,6 +25,13 @@ export default class ClockComponent extends Component {
   @tracked paused
   @tracked completed
 
+  // get dashOffset() {
+    // return (this.timeRemaining / this.timers[0].duration) * -924
+  // }
+  get dash() {
+    return (this.timeRemaining / this.timers[this.timerIndex].duration) * -924
+  }
+
   get second() {
     return (this.timeRemaining / 1000).toFixed(2).replace(/\./, ':')
   }

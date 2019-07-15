@@ -4,7 +4,7 @@
  */
 body {
   font-family: 'Share', cursive;
-  background: #333;
+  background: #222;
   color: #fff;
   overflow: auto;
   margin: 0;
@@ -20,15 +20,6 @@ h1 {
 }
 h1 a, h1 a:visited {
   color: #35976F;
-}
-.circle {
-  stroke-dasharray: 100;
-  animation: dash 5s linear;
-}
-@keyframes dash {
-  to {
-    stroke-dasharray: 1000;
-  }
 }
 .app {
   /* height: 100vh; */
@@ -52,6 +43,28 @@ h1 a, h1 a:visited {
   min-height: 300px;
   flex-flow: column;
   margin-bottom: 5vh;
+  position: relative;
+  margin: 20px auto;
+}
+.clock-component__svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.clock-component__circle {
+  stroke-dasharray: 924;
+  stroke-dashoffset: -924;
+  /* animation: dash 5s linear; */
+}
+.clock-component[data-status="STATE_WORKOUT"] .clock-component__circle{
+  stroke: #DDA84E;
+}
+.clock-component[data-status="STATE_PREP"] .clock-component__circle{
+  stroke: #4a74a1;
+}
+.clock-component[data-status="STATE_REST"] .clock-component__circle{
+  stroke: #35976F;
 }
 
 .clock-component[data-status="STATE_WORKOUT"] {
@@ -59,8 +72,8 @@ h1 a, h1 a:visited {
   color: #DDA84E;
 }
 .clock-component[data-status="STATE_PREP"] {
-  color: #3B6092;
-  border-color: #3B6092;
+  color: #4a74a1;
+  border-color: #4a74a1;
 }
 .clock-component[data-status="STATE_REST"] {
   border-color: #35976F;
