@@ -18,12 +18,24 @@ h1 {
   padding: .5em;
   font-size: 16px;
 }
+h1 a, h1 a:visited {
+  color: #35976F;
+}
+.circle {
+  stroke-dasharray: 100;
+  animation: dash 5s linear;
+}
+@keyframes dash {
+  to {
+    stroke-dasharray: 1000;
+  }
+}
 .app {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  /* height: 100vh; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
 }
 .clock-component {
   cursor: pointer;
