@@ -29,7 +29,7 @@ export default class ClockComponent extends Component {
     // return (this.timeRemaining / this.timers[0].duration) * -924
   // }
   get dash() {
-    return (this.timeRemaining / this.timers[this.timerIndex].duration) * -924
+    return `${(this.timeRemaining / this.timers[this.timerIndex].duration) * -301.59}%`
   }
 
   get second() {
