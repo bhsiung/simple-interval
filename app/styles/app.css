@@ -1,6 +1,8 @@
 /*
  * color
  * https://paletton.com/#uid=70g0A0kg5E71w+S9YT7kKrMnTfQ
+ * font
+ * https://fonts.google.com/selection?category=Display,Handwriting&selection.family=Baloo+Bhaijaan|Expletus+Sans|Fugaz+One|Londrina+Solid|Medula+One|Oleo+Script|Racing+Sans+One|Shrikhand
  */
 body {
   font-family: 'Share', cursive;
@@ -11,16 +13,17 @@ body {
 }
 
 h1 {
-  margin: 0;
+  margin: 7px 0 0;
   color: #fff;
-  padding: .5em;
+  background: #35976F;
+  padding: .5em 2em .5em .5em;
   font-size: 16px;
   position: absolute;
   top: 0;
   left: 0;
 }
 h1 a, h1 a:visited {
-  color: #35976F;
+  color: inherit;
   text-decoration: none;
 }
 .clock-route {
