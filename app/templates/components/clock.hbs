@@ -15,7 +15,10 @@
   </div>
   {{#if this.shouldShowTimer}}
     <p class="clock-component__timer">{{this.second}}</p>
-    <button class="clock-component__button" type="button" onclick={{this.handleStop}}>Reset</button>
+    <button class="clock-component__button" type="button" onclick={{this.handleStop}}>
+      <span class="oi oi-eject" data-glyph="eject" aria-hidden="true"></span>
+      Reset
+    </button>
     <svg class="clock-component__svg" width="100%">
       <circle
         class="clock-component__circle clock-component__circle--animated"
