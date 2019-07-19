@@ -1,3 +1,14 @@
+@import "components/clock";
+@import "components/clock-link";
+
+:root {
+  --color1: #DD6C4E;
+  --color2: #DDA84E;
+  --color3: #4a74a1;
+  --color4: #35976F;
+  --background: #333;
+}
+
 /*
  * color
  * https://paletton.com/#uid=70g0A0kg5E71w+S9YT7kKrMnTfQ
@@ -32,127 +43,9 @@ h1 a, h1 a:visited {
   align-items: center;
 }
 .app {
-  /* height: 100vh; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
-}
-.clock-link {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  align-items: center;
-  background: #FFA57F;
-  border-radius: 50%;
-  color: #333;
+  height: 100vh;
   display: flex;
-  flex-flow: column;
-  height: 20vh;
-  width: 20vh;
   justify-content: center;
-  margin: 5vh auto;
-  transition: background 300ms ease-out, color 300ms ease-out;
-  text-decoration: none;
-}
-.clock-link__name {
-  font-size: 20px;
-  margin: 0;
-}
-.clock-link__duration {
-  font-size: 13px;
-}
-
-.clock-component {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
   align-items: center;
-  border-radius: 50%;
-  color: #FFA57F;
-  cursor: pointer;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  margin-bottom: 5vh;
-  margin: 20px auto;
-  min-height: 300px;
-  min-width: 300px;
-  position: relative;
-  transition: background 300ms ease-out, color 300ms ease-out;
-  height: 50vh;
-  width: 50vh;
-}
-.clock-component[data-status="idle"] {
-  background: #FFA57F;
-  color: #333;
-}
-.clock-component__svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-}
-.clock-component__circle--animated {
-  stroke-dasharray: 301.59%;
-  stroke-dashoffset: -301.59%;
-  /* animation: dash 5s linear; */
-}
-.clock-component[data-status="STATE_WORKOUT"] .clock-component__circle{
-  stroke: #DDA84E;
-}
-.clock-component[data-status="STATE_PREP"] .clock-component__circle{
-  stroke: #4a74a1;
-}
-.clock-component[data-status="STATE_REST"] .clock-component__circle{
-  stroke: #35976F;
-}
-
-.clock-component[data-status="STATE_WORKOUT"] {
-  color: #DDA84E;
-}
-.clock-component[data-status="STATE_PREP"] {
-  color: #4a74a1;
-}
-.clock-component[data-status="STATE_REST"] {
-  color: #35976F;
-}
-.clock-component h2,
-.clock-component p {
-  margin: 0;
-}
-.clock-component__button {
-  cursor: pointer;
-  border: 1px solid;
-  background: transparent;
-  color: inherit;
-  position: relative;
-  z-index: 1;
-}
-.clock-component .clock-component__title {
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-.clock-component__meta {
-  width: 70%;
-  text-align: center;
-  padding-top: 10px;
-}
-.clock-component__status {
-  font-size: 40px;
-}
-.clock-component__round::before {
-  content: '|';
-  margin: 0 .2em;
-}
-.clock-component .clock-component__timer {
-  margin: 0;
-  font-size: 70px;
-  line-height: 1;
-}
-.clock-component__timer {
-  font-size: 60px;
-}
-.clock-component__toggle {
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
+  flex-direction: column;
 }
