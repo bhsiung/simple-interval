@@ -118,9 +118,6 @@ export default class ClockComponent extends Component {
 
   @action
   handleMainAction(e) {
-    if (this.args.type === 'link') {
-      return this.args.gotoPage();
-    }
     if (!this.shouldShowTimer) return this.handleStart(e);
     if (this.paused) {
       this.paused = false;
