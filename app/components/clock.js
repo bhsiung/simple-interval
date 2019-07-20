@@ -8,6 +8,15 @@ const STATE_REST = 'STATE_REST'
 const PREP_DURATION = 3000
 const TIMER_INTERVAL = 10
 
+const SOUND_OCCASSION_END = 'end'
+const SOUND_OCCASSION_START = 'start'
+const SOUND_OCCASSION_BREAK = 'break'
+const SOUND_FILE_MAP = {
+  [SOUND_OCCASSION_START]: '/sounds/break.mp3',
+  [SOUND_OCCASSION_BREAK]: '/sounds/break.mp3',
+  [SOUND_OCCASSION_END]: '/sounds/end.mp3'
+}
+
 function generateTimers({ round, timeOff, timeOn }) {
   const timers = [{state:STATE_PREP,duration:PREP_DURATION}]
   for(let i=0; i<round; i++) {
@@ -69,6 +78,15 @@ export default class ClockComponent extends Component {
     this.timeRemaining = this.timers[0].duration
   }
 
+  playSound(occassion) {
+    this.sound = new Audio(SOUND_FILE_MAP[occassion])
+    this.sound.play()
+  }
+
+  pauseSound() {
+    this.sound.pause()
+  }
+
   loop() {
     // still running the same timer
     if (this.timeRemaining > 0) {
@@ -79,10 +97,16 @@ export default class ClockComponent extends Component {
     if (this.timerIndex >= this.timers.length - 1) {
       clearInterval(this.timer)
       this.completed = true
+      this.playSound(SOUND_OCCASSION_END)
       return
     }
     // shift to the next timer
-    if (this.timers[this.timerIndex].state === STATE_REST) this.currentRound++
+    if (this.timers[this.timerIndex].state === STATE_REST) {
+      this.currentRound++
+      this.playSound(SOUND_OCCASSION_START)
+    } else {
+      this.playSound(SOUND_OCCASSION_BREAK)
+    }
     this.timerIndex++
     this.timeRemaining = this.timers[this.timerIndex].duration
   }
