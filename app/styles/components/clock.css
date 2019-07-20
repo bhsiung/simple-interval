@@ -30,6 +30,13 @@
   background: var(--color1);
   color: var(--background);
 }
+.clock-component[data-status="idle"] .clock-component__status{
+  font-size: 11vh;
+}
+.clock-component[data-status="idle"] .clock-component__title{
+    font-size: 5vh;
+    border-bottom: 4px solid;
+}
 .clock-component__svg {
     position: absolute;
     top: 0;

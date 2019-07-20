@@ -25,11 +25,8 @@ export default class ClockComponent extends Component {
   @tracked paused
   @tracked completed
 
-  // get dashOffset() {
-    // return (this.timeRemaining / this.timers[0].duration) * -924
-  // }
-  get dash() {
-    return `${(this.timeRemaining / this.timers[this.timerIndex].duration) * -301.59}%`
+  get progress() {
+    return this.timeRemaining / this.timers[this.timerIndex].duration
   }
 
   get second() {
@@ -91,21 +88,6 @@ export default class ClockComponent extends Component {
   }
 
   @action
-  handleStart(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    if (this.completed) this.resetTimer()
-
-    if (!this.started || this.paused) {
-      this.started = true
-      this.paused = false
-      // use runloop
-      this.timer = setInterval(this.loop.bind(this), TIMER_INTERVAL)
-    }
-    return false;
-  }
-
-  @action
   handleStop(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -117,8 +99,18 @@ export default class ClockComponent extends Component {
   }
 
   @action
-  handleMainAction(e) {
-    if (!this.shouldShowTimer) return this.handleStart(e);
+  handleMainAction() {
+    if (!this.shouldShowTimer) {
+      if (this.completed) this.resetTimer()
+
+      if (!this.started || this.paused) {
+        this.started = true
+        this.paused = false
+        // TODO use runloop
+        this.timer = setInterval(this.loop.bind(this), TIMER_INTERVAL)
+      }
+      return
+    }
     if (this.paused) {
       this.paused = false;
       this.timer = setInterval(this.loop.bind(this), TIMER_INTERVAL)

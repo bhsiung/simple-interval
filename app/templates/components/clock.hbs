@@ -19,24 +19,6 @@
       <span class="oi oi-eject" data-glyph="eject" aria-hidden="true"></span>
       Reset
     </button>
-    <svg class="clock-component__svg" width="100%">
-      <circle
-        class="clock-component__circle clock-component__circle--animated"
-        cx="50%"
-        cy="50%"
-        r="48%"
-        fill="none"
-        stroke-width="4%"
-        style="stroke-dashoffset:{{this.dash}}"
-      />
-      <circle
-        class="clock-component__circle"
-        cx="50%"
-        cy="50%"
-        r="49.5%"
-        fill="none"
-        stroke-width="1%"
-      />
-    </svg>
+    <Circle class="clock-component__svg" width="100%" @progress={{this.progress}} />
   {{/if}}
 </div>

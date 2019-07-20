@@ -1,4 +1,7 @@
 <LinkTo class="clock-link" @route="clock" @model={{@index}}>
   <h2 class="clock-link__name">{{@config.name}}</h2>
-  <div class="clock-link__duration">length: {{this.totalDuration}}</div>
+  <ul class="clock-link__duration">
+    <li>pace: {{this.pace}}</li>
+    <li>length: {{this.totalDuration}}</li>
+  </ul>
 </LinkTo>
