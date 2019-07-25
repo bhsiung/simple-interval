@@ -6,11 +6,12 @@ module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
-        plugins: [
-          { module: require('postcss-import') },
-          { module: require('postcss-cssnext') }
-        ]
+        plugins: [{ module: require('postcss-import') }, { module: require('postcss-cssnext') }]
       }
+    },
+    'ember-cli-babel': {
+      includePolyfill: true,
+      includeExternalHelpers: false
     }
   });
 
