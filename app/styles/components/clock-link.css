@@ -10,18 +10,38 @@
   height: 23vh;
   width: 23vh;
   justify-content: center;
-  margin: 2vh auto;
+  margin: 2vh;
   transition: background 300ms ease-out, color 300ms ease-out;
   text-decoration: none;
   padding: 3vh;
   box-sizing: border-box;
+  min-width: 150px;
+  min-height: 150px;
 }
+@media (orientation: portrait) {
+  .clock-link:first-child {
+    margin-top: 4vh;
+  }
+  .clock-link:last-child {
+    margin-bottom: 4vh;
+  }
+}
+
+@media (orientation: landscape) {
+  .clock-link:first-child {
+    margin-left: 4vh;
+  }
+  .clock-link:last-child {
+    margin-right: 4vh;
+  }
+}
+
 .clock-link:hover, .clock-link:active {
   background: var(--color3);
 }
 .clock-link__name {
   text-align: center;
-  font-size: 5vh;
+  font-size: calc(13px + 2vh);
   margin: 0;
 }
 .clock-link__duration {
