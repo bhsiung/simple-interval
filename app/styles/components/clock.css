@@ -37,11 +37,15 @@
     font-size: 5vh;
     border-bottom: 4px solid;
 }
-.clock-component__svg {
+.clock-component__svg-outer {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+}
+.clock-component__svg {
+    position: absolute;
+    top: 5%;
+    left: 5%;
 }
 .clock-component__circle--animated {
   stroke-dasharray: 301.59%;
@@ -97,11 +101,13 @@
 }
 .clock-component .clock-component__timer {
   margin: 0;
-  font-size: 70px;
   line-height: 1;
 }
-.clock-component__timer {
+.clock-component__current-time {
   font-size: 60px;
+}
+.clock-component__current-duration {
+  font-size: 24px;
 }
 .clock-component__toggle {
   border: 1px solid #fff;

@@ -14,11 +14,15 @@
   <p class="clock-component__status">{{this.statusText}}</p>
   </div>
   {{#if this.shouldShowTimer}}
-    <p class="clock-component__timer">{{this.second}}</p>
+    <div class="clock-component__timer">
+      <span class="clock-component__current-time">{{this.second}}</span>
+      <span class="clock-component__current-duration">/{{this.currentDuration}}</span>
+    </div>
     <button class="clock-component__button" type="button" onclick={{this.handleStop}}>
       <span class="oi oi-eject" data-glyph="eject" aria-hidden="true"></span>
       Reset
     </button>
-    <Circle class="clock-component__svg" width="100%" @progress={{this.progress}} />
+    <Circle class="clock-component__svg" @radius="90%" @progress={{this.progress}} @hasOuterRing=true />
+    <Circle class="clock-component__svg-outer" @radius="100%" @progress={{this.totalProgress}} />
   {{/if}}
 </div>

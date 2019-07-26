@@ -1,6 +1,7 @@
 import Component from '@glimmer/component'
 import { tracked } from "@glimmer/tracking"
 import { action } from '@ember/object'
+import { msToPrintable } from 'tabata/utils/time-functions'
 
 const STATE_PREP = 'STATE_PREP'
 const STATE_WORKOUT = 'STATE_WORKOUT'
@@ -26,8 +27,13 @@ function generateTimers({ round, timeOff, timeOn }) {
   return timers
 }
 
+function calculatorTotalDuration(timers) {
+  return timers.reduce((total, { duration }) => total + duration, 0)
+}
+
 export default class ClockComponent extends Component {
-  @tracked timeRemaining
+  @tracked currentTimerRemaining
+  @tracked totalTimerRemaining
   @tracked currentRound
   @tracked timerIndex
   @tracked started
@@ -35,11 +41,20 @@ export default class ClockComponent extends Component {
   @tracked completed
 
   get progress() {
-    return this.timeRemaining / this.timers[this.timerIndex].duration
+    return this.currentTimerRemaining / this.timers[this.timerIndex].duration
+  }
+
+  get totalProgress() {
+    return this.totalTimerRemaining / this.totalDuration
+  }
+
+  get currentDuration() {
+    return msToPrintable(this.timers[this.timerIndex].duration)
   }
 
   get second() {
-    return (this.timeRemaining / 1000).toFixed(2).replace(/\./, ':')
+    // return (this.currentTimerRemaining / 1000).toFixed(2).replace(/\./, ':')
+    return msToPrintable(this.currentTimerRemaining)
   }
 
   get shouldShowTimer() {
@@ -66,6 +81,7 @@ export default class ClockComponent extends Component {
     super(...arguments)
     this.state = STATE_PREP
     this.timers = generateTimers(this.args.config)
+    this.totalDuration = calculatorTotalDuration(this.timers)
     this.resetTimer()
   }
 
@@ -75,7 +91,8 @@ export default class ClockComponent extends Component {
     this.completed = false
     this.timerIndex = 0
     this.currentRound = 1
-    this.timeRemaining = this.timers[0].duration
+    this.currentTimerRemaining = this.timers[0].duration
+    this.totalTimerRemaining = this.totalDuration
   }
 
   playSound(occassion) {
@@ -89,8 +106,9 @@ export default class ClockComponent extends Component {
 
   loop() {
     // still running the same timer
-    if (this.timeRemaining > 0) {
-      this.timeRemaining -= TIMER_INTERVAL
+    if (this.currentTimerRemaining > 0) {
+      this.currentTimerRemaining -= TIMER_INTERVAL
+      this.totalTimerRemaining -= TIMER_INTERVAL
       return
     }
     // the last round
@@ -108,7 +126,7 @@ export default class ClockComponent extends Component {
       this.playSound(SOUND_OCCASSION_BREAK)
     }
     this.timerIndex++
-    this.timeRemaining = this.timers[this.timerIndex].duration
+    this.currentTimerRemaining = this.timers[this.timerIndex].duration
   }
 
   @action
