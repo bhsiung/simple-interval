@@ -4,6 +4,6 @@ const initState = [
   { name: '5x5', round: 5, timeOn: 20000, timeOff: 30000 }
 ];
 
-export default function clocks(state, action) {
+export default function clocks(state) {
   return state || initState
 }

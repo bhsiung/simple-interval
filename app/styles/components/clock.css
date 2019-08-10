@@ -42,6 +42,9 @@
     top: 0;
     left: 0;
 }
+.clock-component__svg-outer--shadow {
+  opacity: .2;
+}
 .clock-component__svg {
     position: absolute;
     top: 5%;

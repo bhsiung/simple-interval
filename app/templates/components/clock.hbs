@@ -1,5 +1,5 @@
 <div class="clock-component"
-  data-status="{{if this.shouldShowTimer this.timerState "idle"}}"
+  data-status={{if this.shouldShowTimer this.timerState "idle"}}
   onclick={{this.handleMainAction}}
 >
   <div class="clock-component__meta">
@@ -11,7 +11,7 @@
         </span>
       {{/if~}}
     </h2>
-  <p class="clock-component__status">{{this.statusText}}</p>
+    <p class="clock-component__status">{{this.statusText}}</p>
   </div>
   {{#if this.shouldShowTimer}}
     <div class="clock-component__timer">
@@ -22,7 +22,8 @@
       <span class="oi oi-eject" data-glyph="eject" aria-hidden="true"></span>
       Reset
     </button>
-    <Circle class="clock-component__svg" @radius="90%" @progress={{this.progress}} @hasOuterRing=true />
+    <Circle class="clock-component__svg" @radius="90%" @progress={{this.progress}} @hasOuterRing={{true}} />
     <Circle class="clock-component__svg-outer" @radius="100%" @progress={{this.totalProgress}} />
+    <Circle class="clock-component__svg-outer clock-component__svg-outer--shadow" @radius="100%" @progress={{2}} />
   {{/if}}
 </div>
