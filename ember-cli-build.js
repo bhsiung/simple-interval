@@ -9,6 +9,10 @@ module.exports = function(defaults) {
         plugins: [{ module: require('postcss-import') }, { module: require('postcss-cssnext') }]
       }
     },
+    'asset-cache': {
+      include: ['assets/**/*', 'ember-welcome-page/images/*'],
+      exclude: ['**/*.png']
+    },
     'ember-cli-babel': {
       includePolyfill: true,
       includeExternalHelpers: false

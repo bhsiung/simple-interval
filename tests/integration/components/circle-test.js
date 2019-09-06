@@ -7,20 +7,13 @@ module('Integration | Component | circle', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    await render(hbs`<Circle @radius={{100}} />`);
+    debugger
+    assert.dom('[data-test-name="component-circle"]').hasAttribute('width', 100)
+  });
 
+  test('it renders', async function(assert) {
     await render(hbs`<Circle />`);
-
     assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <Circle>
-        template block text
-      </Circle>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
