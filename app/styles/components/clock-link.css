@@ -1,10 +1,10 @@
 .clock-link {
-  transition: background 200ms ease-out;
+  transition: background 100ms ease-out;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   align-items: center;
-  background: var(--color1);
+  border: 2px solid var(--color1);
   border-radius: 50%;
-  color: var(--background);
+  color: var(--color1);
   display: flex;
   flex-flow: column;
   height: 23vh;
@@ -37,7 +37,7 @@
 }
 
 .clock-link:hover, .clock-link:active {
-  background: var(--color3);
+  color: var(--color2);
 }
 .clock-link__name {
   text-align: center;

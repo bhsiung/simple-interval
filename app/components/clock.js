@@ -70,7 +70,7 @@ export default class ClockComponent extends Component {
 
     if (this.paused) return 'Pause'
     if (this.completed) return 'GREAT JOB!'
-    if (!this.started) return 'LET\' GO'
+    if (!this.started) return 'CLICK TO START'
     if (timerState === STATE_PREP) return "GET READY..."
     else if (timerState === STATE_REST) return "REST"
     else if (timerState === STATE_WORKOUT) return "GO GO GO!!"
@@ -83,6 +83,10 @@ export default class ClockComponent extends Component {
     this.timers = generateTimers(this.args.config)
     this.totalDuration = calculatorTotalDuration(this.timers)
     this.resetTimer()
+  }
+
+  destroy() {
+    clearInterval(this.timer)
   }
 
   resetTimer() {
