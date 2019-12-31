@@ -1,7 +1,14 @@
-<LinkTo class="clock-link" @route="clock" @model={{@index}}>
-  <h2 class="clock-link__name">{{@config.name}}</h2>
-  <ul class="clock-link__duration">
-    <li>pace: {{this.pace}}</li>
-    <li>Duration: {{this.totalDuration}}</li>
-  </ul>
-</LinkTo>
+<section class="clock-link">
+  <LinkTo class="clock-link__anchor focusable" @route="clock" @model={{@index}}>
+    <h2 class="clock-link__name">{{@config.name}}</h2>
+    <ul class="clock-link__duration">
+      <li>total duration: {{this.totalDuration}}</li>
+      <li>work: {{ms-to-printable @config.timeOn}}</li>
+      <li>rest: {{ms-to-printable @config.timeOff}}</li>
+      <li>round: {{@config.round}}</li>
+    </ul>
+  </LinkTo>
+  <button class="clock-link__edit focusable" onClick={{this.onEdit}}>
+    <span class="oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
+  </button>
+</section>

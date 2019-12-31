@@ -73,3 +73,11 @@ h1 a, h1 a:visited {
   width: 1000px;
   margin: 0 auto;
 }
+.focusable {
+    transition: box-shadow 200ms ease-out;
+    outline: none;
+}
+.focusable:hover,
+.focusable:focus {
+  box-shadow: rgba(255,255,255,.5) 0px 0px 7px 1px
+}
