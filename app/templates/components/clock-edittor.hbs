@@ -7,6 +7,7 @@
     <label>name</label>
     <input
       class="clock-edit__form-control"
+      maxlength="10"
       value={{@name}}
       onchange={{action this.onChange "name"}}
     >
@@ -56,6 +57,7 @@
     >
   </div>
   <div class="clock-edit__form-group">
-    <input type="submit" value="looks good">
+    <input class="btn focusable" type="submit" value="looks good">
+    <LinkTo @route="index" class="btn btn--secondary focusable">nevermind</LinkTo>
   </div>
 </form>
