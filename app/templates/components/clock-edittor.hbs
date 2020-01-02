@@ -1,0 +1,61 @@
+<form class="clock-edit" onsubmit={{action this.onSubmit}}>
+  <h2 class="clock-edit__title">
+    <span class="inline-icon oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
+    <span>Customize your clock</span>
+  </h2>
+  <div class="clock-edit__form-group">
+    <label>name</label>
+    <input
+      class="clock-edit__form-control"
+      value={{@name}}
+      onchange={{action this.onChange "name"}}
+    >
+  </div>
+  <div class="clock-edit__form-group">
+    <label>rounds ({{this.round}})</label>
+    <input
+      class="clock-edit__form-control"
+      type="range"
+      min="1"
+      max="20"
+      step="1"
+      value={{this.round}}
+      onchange={{action this.onChange "round"}}
+    >
+  </div>
+  <div class="clock-edit__form-group">
+    <label>work ({{ms-to-printable this.timeOn}})</label>
+    <input
+      class="clock-edit__form-control"
+      type="range"
+      min="10000"
+      max="120000"
+      step="5000"
+      value={{this.timeOn}}
+      onchange={{action this.onChange "timeOn"}}
+    >
+  </div>
+  <div class="clock-edit__form-group">
+    <label>rest ({{ms-to-printable this.timeOff}})</label>
+    <input
+      class="clock-edit__form-control"
+      type="range"
+      min="10000"
+      max="120000"
+      step="5000"
+      value={{this.timeOff}}
+      onchange={{action this.onChange "timeOff"}}
+    >
+  </div>
+  <div class="clock-edit__form-group">
+    <label>total duration</label>
+    <input
+      class="clock-edit__form-control"
+      read-only
+      value={{ms-to-printable this.totalDuration}}
+    >
+  </div>
+  <div class="clock-edit__form-group">
+    <input type="submit" value="looks good">
+  </div>
+</form>

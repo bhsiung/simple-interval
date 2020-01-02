@@ -8,7 +8,7 @@
       <li>round: {{@config.round}}</li>
     </ul>
   </LinkTo>
-  <button class="clock-link__edit focusable" onClick={{this.onEdit}}>
+  <LinkTo @route="clock.edit" @model={{@index}} class="clock-link__edit focusable" onClick={{this.onEdit}}>
     <span class="oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
-  </button>
+  </LinkTo>
 </section>

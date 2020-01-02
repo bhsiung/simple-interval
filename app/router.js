@@ -7,7 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('clock', {path: 'clock/:id'});
+  this.route('clock', {path: 'clock/:id'}, function() {
+    this.route('edit');
+  });
   this.route('css-test');
 });
 

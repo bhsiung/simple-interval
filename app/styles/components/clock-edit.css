@@ -1,0 +1,24 @@
+.clock-edit {
+  width: 70vw;
+  min-width: 300px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #333;
+}
+.clock-edit__title {
+  margin: -20px -20px 20px -20px;
+  padding: 20px;
+  background: #444;
+  color: #fff;
+}
+.clock-edit__form-group {
+  margin-bottom: 20px;
+}
+.clock-edit__form-control {
+  width: 100%;
+  padding: .5em;
+  box-sizing: border-box;
+  margin: 0;
+}
