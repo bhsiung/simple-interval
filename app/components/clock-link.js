@@ -1,6 +1,5 @@
 import Component from '@glimmer/component';
 import { msToPrintable } from 'tabata/utils/time-functions'
-import { action } from '@ember/object'
 
 export default class ClockLinkComponent extends Component {
   get pace () {
@@ -13,10 +12,5 @@ export default class ClockLinkComponent extends Component {
     const mseconds = round * timeOn + ( round - 1 ) * timeOff
 
     return msToPrintable(mseconds)
-  }
-
-  @action
-  onEdit(e) {
-    console.log('edit');
   }
 }

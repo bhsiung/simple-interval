@@ -2,6 +2,7 @@ import Component from '@glimmer/component'
 import { tracked } from "@glimmer/tracking"
 import { action } from '@ember/object'
 import { msToPrintable } from 'tabata/utils/time-functions'
+import { htmlSafe } from '@ember/template';
 
 const STATE_PREP = 'STATE_PREP'
 const STATE_WORKOUT = 'STATE_WORKOUT'
@@ -70,7 +71,7 @@ export default class ClockComponent extends Component {
 
     if (this.paused) return 'Pause'
     if (this.completed) return 'GREAT JOB!'
-    if (!this.started) return 'CLICK TO START'
+    if (!this.started) return htmlSafe('CLICK TO START<br><span class="oi oi-heart breathing-font" data-glyph="heart" aria-hidden="true"></span>')
     if (timerState === STATE_PREP) return "GET READY..."
     else if (timerState === STATE_REST) return "REST"
     else if (timerState === STATE_WORKOUT) return "GO GO GO!!"

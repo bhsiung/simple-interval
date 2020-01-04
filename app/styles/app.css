@@ -113,3 +113,16 @@ header a, header a:visited {
 .btn--secondary:focus {
   background: var(--color4);
 }
+
+.breathing-font {
+  line-height: 1em;
+  font-size: .9em;
+  animation: breathing-font 2s infinite normal;
+}
+@keyframes breathing-font {
+  15% { font-size: .9em; }
+  19% { font-size: 1em; }
+  23% { font-size: .9em; }
+  27% { font-size: 1em; }
+  31% { font-size: .9em; }
+}
