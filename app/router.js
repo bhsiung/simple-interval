@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('edit');
   });
   this.route('css-test');
+  this.route('new-clock');
 });
 
 export default Router;

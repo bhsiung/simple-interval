@@ -59,7 +59,7 @@
 }
 .clock-link__name {
   text-align: center;
-  font-size: calc(13px + 2vh);
+  font-size: 1.3em;
   margin: 0;
 }
 .clock-link__duration {

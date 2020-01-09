@@ -3,6 +3,7 @@ import { tracked } from "@glimmer/tracking"
 import { action } from '@ember/object'
 import { msToPrintable } from 'tabata/utils/time-functions'
 import { htmlSafe } from '@ember/template';
+import { cancel, later } from '@ember/runloop';
 
 const STATE_PREP = 'STATE_PREP'
 const STATE_WORKOUT = 'STATE_WORKOUT'
@@ -86,8 +87,8 @@ export default class ClockComponent extends Component {
     this.resetTimer()
   }
 
-  destroy() {
-    clearInterval(this.timer)
+  willDestroy() {
+    cancel(this.timer)
   }
 
   resetTimer() {
@@ -114,11 +115,11 @@ export default class ClockComponent extends Component {
     if (this.currentTimerRemaining > 0) {
       this.currentTimerRemaining -= TIMER_INTERVAL
       this.totalTimerRemaining -= TIMER_INTERVAL
+      this.timer = later(this, this.loop, TIMER_INTERVAL)
       return
     }
     // the last round
     if (this.timerIndex >= this.timers.length - 1) {
-      clearInterval(this.timer)
       this.completed = true
       this.playSound(SOUND_OCCASSION_END)
       return
@@ -132,6 +133,7 @@ export default class ClockComponent extends Component {
     }
     this.timerIndex++
     this.currentTimerRemaining = this.timers[this.timerIndex].duration
+    this.timer = later(this, this.loop, TIMER_INTERVAL)
   }
 
   @action
@@ -153,17 +155,16 @@ export default class ClockComponent extends Component {
       if (!this.started || this.paused) {
         this.started = true
         this.paused = false
-        // TODO use runloop
-        this.timer = setInterval(this.loop.bind(this), TIMER_INTERVAL)
+        this.timer = later(this, this.loop, TIMER_INTERVAL)
       }
       return
     }
     if (this.paused) {
       this.paused = false;
-      this.timer = setInterval(this.loop.bind(this), TIMER_INTERVAL)
+      this.timer = later(this, this.loop, TIMER_INTERVAL)
     } else {
       this.paused = true
-      clearInterval(this.timer)
+      cancel(this.timer)
     }
   }
 }
