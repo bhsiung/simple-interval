@@ -1,8 +1,12 @@
+:root {
+  --slider-height: 15px;
+}
+
 .clock-edit {
   width: 70vw;
   min-width: 300px;
   margin: 0 auto;
-  background: #fff;
+  background: rgba(60,60,60,.8);
   padding: 20px;
   box-sizing: border-box;
   color: #333;
@@ -25,7 +29,36 @@
 .clock-edit__form-label {
   margin-bottom: .5em;
   display: block;
+  color: var(--color1);
+}
+.clock-edit__form-control[type="range"] {
+  appearance: none;
+  border-radius: 8px;
+  height: var(--slider-height);
+  background: var(--color4);
+  outline: none;
+}
+.clock-edit__form-control[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: calc(var(--slider-height) + 10px);
+  height: calc(var(--slider-height) + 10px);
+  background: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.clock-edit__form-control[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--slider-height);
+  height: var(--slider-height);
+  background: var(--color1);
+  cursor: pointer;
+  border-radius: 50%;
 }
 .clock-edit__form-control[type="text"] {
   font-size: 26px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.5);
 }
