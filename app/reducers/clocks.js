@@ -8,6 +8,16 @@ const cachedInitState = cachedInitStateJSON && JSON.parse(cachedInitStateJSON);
 
 export default function clocks(state = cachedInitState || initState, action) {
   switch(action.type) {
+    case 'newClock': {
+      const newClocks = [...state, {
+        name: action.name,
+        round: action.round,
+        timeOn: action.timeOn,
+        timeOff: action.timeOff,
+      }]
+      localStorage.setItem('clockConfig', JSON.stringify(newClocks))
+      return newClocks
+    }
     case 'updateClock': {
       const newClocks = state.map((clock, index) => {
         if (index === action.clockId) {

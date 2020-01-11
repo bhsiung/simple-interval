@@ -1,3 +1,11 @@
 {{#each @configs as |config i|}}
   <ClockLink @config={{config}} @index={{i}} />
 {{/each}}
+<LinkTo class="clock-link__anchor focusable clock-link__anchor--new" @route="new-clock">
+  <span>create new</span>
+  <p class="clock-link__new-icon" aria-hidden="true">
+    <span class="clock-link__new-icon-bracket">[</span>
+    <span class="oi oi-plus" data-glyph="plus" aria-hidden="true"></span>
+    <span class="clock-link__new-icon-bracket">]</span>
+  </p>
+</LinkTo>

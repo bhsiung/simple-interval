@@ -13,8 +13,25 @@
   min-width: 300px;
   position: relative;
   transition: background 300ms ease-out, color 300ms ease-out;
-  height: 50vh;
-  width: 50vh;
+  height: 48vh;
+  width: 48vh;
+}
+.clock-component__pause-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 70px;
+  transform: translate(-50%, -50%) scale(2);
+  filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-out 150ms;
+}
+.clock-component:active .clock-component__pause-overlay{
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+  transform: translate(-50%, -50%) scale(1)
 }
 .clock-component[data-status="STATE_WORKOUT"] {
   color: var(--color2);
@@ -103,14 +120,12 @@
   margin: 0 .2em;
 }
 .clock-component .clock-component__timer {
-  margin: 0;
+  margin: 0 0 .7em;
   line-height: 1;
+  font-family: 'Space Mono', monospace;
 }
 .clock-component__current-time {
   font-size: 60px;
-}
-.clock-component__current-duration {
-  font-size: 24px;
 }
 .clock-component__toggle {
   border: 1px solid #fff;

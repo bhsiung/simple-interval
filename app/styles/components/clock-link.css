@@ -57,10 +57,30 @@
     bottom: 3vh;
     right: 3vh;
 }
+.clock-link__new-icon {
+  text-align: center;
+  font-size: 1.3em;
+  margin: .5em 0 0;
+}
+.clock-link__new-icon-bracket {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+.clock-link__anchor--new:hover .clock-link__new-icon-bracket {
+  opacity: 1;
+}
+.clock-link__new-icon > * {
+  vertical-align: middle;
+}
+.clock-link__new-icon [data-glyph="plus"] {
+  color: #fff;
+  margin: 0 .2em;
+}
 .clock-link__name {
   text-align: center;
   font-size: 1.3em;
   margin: 0;
+  color: #fff;
 }
 .clock-link__duration {
   font-size: 13px;

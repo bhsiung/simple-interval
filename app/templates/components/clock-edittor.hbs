@@ -4,16 +4,17 @@
     <span>Customize your clock</span>
   </h2>
   <div class="clock-edit__form-group">
-    <label>name</label>
+    <label class="clock-edit__form-label">name</label>
     <input
+      type="text"
       class="clock-edit__form-control"
       maxlength="10"
-      value={{@name}}
+      value={{this.name}}
       oninput={{action this.onChange "name"}}
     >
   </div>
   <div class="clock-edit__form-group">
-    <label>rounds ({{this.round}})</label>
+    <label class="clock-edit__form-label">rounds ({{this.round}})</label>
     <input
       class="clock-edit__form-control"
       type="range"
@@ -25,7 +26,7 @@
     >
   </div>
   <div class="clock-edit__form-group">
-    <label>work ({{ms-to-printable this.timeOn}})</label>
+    <label class="clock-edit__form-label">work ({{ms-to-printable this.timeOn}})</label>
     <input
       class="clock-edit__form-control"
       type="range"
@@ -37,7 +38,7 @@
     >
   </div>
   <div class="clock-edit__form-group">
-    <label>rest ({{ms-to-printable this.timeOff}})</label>
+    <label class="clock-edit__form-label">rest ({{ms-to-printable this.timeOff}})</label>
     <input
       class="clock-edit__form-control"
       type="range"
@@ -49,8 +50,9 @@
     >
   </div>
   <div class="clock-edit__form-group">
-    <label>total duration</label>
+    <label class="clock-edit__form-label">total duration</label>
     <input
+      type="text"
       class="clock-edit__form-control"
       read-only
       value={{ms-to-printable this.totalDuration}}
