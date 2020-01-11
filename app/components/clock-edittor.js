@@ -2,6 +2,11 @@ import Component from '@glimmer/component';
 import { tracked } from "@glimmer/tracking"
 import { inject as service } from '@ember/service';
 
+const DEFAULT_TIME_ON = 30000
+const DEFAULT_TIME_OFF = 30000
+const DEFAULT_NAME = 'New workout'
+const DEFAULT_ROUND = 4
+
 export default class ClockLinkComponent extends Component {
   @service router
   @service redux
@@ -16,10 +21,10 @@ export default class ClockLinkComponent extends Component {
 
   constructor() {
     super(...arguments)
-    this.timeOn = this.args.timeOn
-    this.timeOff = this.args.timeOff
-    this.name = this.args.name
-    this.round = this.args.round
+    this.timeOn = this.args.timeOn || DEFAULT_TIME_ON
+    this.timeOff = this.args.timeOff || DEFAULT_TIME_OFF
+    this.name = this.args.name || DEFAULT_NAME
+    this.round = this.args.round || DEFAULT_ROUND
   }
   onChange(type, e) {
     const supportedTypes = ['timeOff', 'timeOn', 'round', 'name']
@@ -30,8 +35,7 @@ export default class ClockLinkComponent extends Component {
     const { timeOff, timeOn, round, name } = this;
     e.preventDefault();
     this.redux.dispatch({
-      type: 'updateClock',
-      clockId: this.args.clockId,
+      type: 'newClock',
       timeOff,
       timeOn,
       round,

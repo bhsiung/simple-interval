@@ -2,6 +2,13 @@
   data-status={{if this.shouldShowTimer this.timerState "idle"}}
   onclick={{this.handleMainAction}}
 >
+  {{#if this.shouldShowTimer}}
+    <span
+       class="oi oi-media-{{if this.paused "play" "pause"}} clock-component__pause-overlay"
+      data-glyph="media-{{if this.paused "play" "pause"}}" aria-hidden="true"
+    >
+    </span>
+  {{/if}}
   <div class="clock-component__meta">
     <h2 class="clock-component__title">
       <b>{{~@config.name~}}</b>
@@ -11,16 +18,17 @@
         </span>
       {{/if~}}
     </h2>
-    <p class="clock-component__status">{{this.statusText}}</p>
+    <p class="clock-component__status">
+      {{this.statusText}}
+    </p>
   </div>
   {{#if this.shouldShowTimer}}
     <div class="clock-component__timer">
       <span class="clock-component__current-time">{{this.second}}</span>
-      <span class="clock-component__current-duration">/{{this.currentDuration}}</span>
     </div>
     <button class="clock-component__button" type="button" onclick={{this.handleStop}}>
-      <span class="oi oi-eject" data-glyph="eject" aria-hidden="true"></span>
-      Reset
+      <span class="oi oi-power-standby" data-glyph="power-standby" aria-hidden="true"></span>
+      END WORKOUT
     </button>
     <Circle class="clock-component__svg" @radius="90%" @progress={{this.progress}} @hasOuterRing={{true}} />
     <Circle class="clock-component__svg-outer" @radius="100%" @progress={{this.totalProgress}} />

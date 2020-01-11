@@ -23,8 +23,8 @@ const SOUND_FILE_MAP = {
 function generateTimers({ round, timeOff, timeOn }) {
   const timers = [{state:STATE_PREP,duration:PREP_DURATION}]
   for(let i=0; i<round; i++) {
-    timers.push({state: STATE_WORKOUT, duration: timeOn})
-    if (i<round-1) timers.push({state: STATE_REST, duration: timeOff})
+    timers.push({state: STATE_WORKOUT, duration: parseInt(timeOn)})
+    if (i<round-1) timers.push({state: STATE_REST, duration: parseInt(timeOff)})
   }
   return timers
 }

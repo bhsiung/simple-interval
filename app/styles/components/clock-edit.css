@@ -22,3 +22,10 @@
   box-sizing: border-box;
   margin: 0;
 }
+.clock-edit__form-label {
+  margin-bottom: .5em;
+  display: block;
+}
+.clock-edit__form-control[type="text"] {
+  font-size: 26px;
+}
