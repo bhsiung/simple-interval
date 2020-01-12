@@ -96,7 +96,7 @@ export default class ClockComponent extends Component {
     this.started = false
     this.completed = false
     this.timerIndex = 0
-    this.currentRound = 1
+    this.currentRound = 0
     this.currentTimerRemaining = this.timers[0].duration
     this.totalTimerRemaining = this.totalDuration
   }

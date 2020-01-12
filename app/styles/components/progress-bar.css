@@ -1,0 +1,29 @@
+.progress {
+  height: 10px;
+  margin: 5px 0;
+  width: 50%;
+  display: flex;
+  transform: skewX(-15deg);
+}
+.progress__rect {
+  box-shadow: var(--clock-color) 0 0 0 1px;
+  margin-left: 10px;
+  height: 100%;
+  flex: 1;
+}
+.progress__rect--DONE {
+  background-color: var(--clock-color);
+}
+.progress__rect--ACTIVE {
+  background-color: var(--clock-color);
+  animation: blink-background 2s infinite normal;
+}
+.progress__rect:first-child {
+  margin-left: 0;
+}
+@keyframes blink-background {
+  0% { background-color: transparent; }
+  20% { background-color: var(--clock-color); }
+  70% { background-color: var(--clock-color); }
+  100% { background-color: transparent; }
+}

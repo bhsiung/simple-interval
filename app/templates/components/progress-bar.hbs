@@ -1,0 +1,8 @@
+<div class="progress">
+  {{#each this.statuses as |status|}}
+    <span data-test-progress-rect={{status}}
+     class="progress__rect progress__rect--{{status}}">
+    </span>
+  {{/each}}
+  {{!--  <span class="progress__rect progress__rect--active"></span>  --}}
+</div>

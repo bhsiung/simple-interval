@@ -2,7 +2,6 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   align-items: center;
   border-radius: 50%;
-  color: var(--color1);
   cursor: pointer;
   display: flex;
   flex-flow: column;
@@ -35,16 +34,20 @@
 }
 .clock-component[data-status="STATE_WORKOUT"] {
   color: var(--color2);
+  --clock-color: var(--color2);
 }
 .clock-component[data-status="STATE_PREP"] {
   color: var(--color3);
+  --clock-color: var(--color3);
 }
 .clock-component[data-status="STATE_REST"] {
   color: var(--color4);
+  --clock-color: var(--color4);
 }
 
 .clock-component[data-status="idle"] {
   border: 0;
+  --clock-color: var(--color1);
   color: var(--color1);
 }
 .clock-component[data-status="idle"] .clock-component__status{
@@ -72,27 +75,12 @@
   stroke-dashoffset: -301.59%;
   /* animation: dash 5s linear; */
 }
-.clock-component[data-status="STATE_WORKOUT"] .clock-component__circle{
-  stroke: var(--color2);
-}
-.clock-component[data-status="STATE_PREP"] .clock-component__circle{
-  stroke: var(--color3);
-}
-.clock-component[data-status="STATE_REST"] .clock-component__circle{
-  stroke: var(--color4);
+.clock-component .clock-component__circle{
+  stroke: var(--clock-color);
 }
 
-.clock-component[data-status="STATE_WORKOUT"] {
-  color: var(--color2);
-}
-.clock-component[data-status="STATE_PREP"] {
-  color: var(--color3);
-}
-.clock-component[data-status="STATE_REST"] {
-  color: var(--color4);
-}
 .clock-component h2,
-.clock-component p {
+.clock-component__status {
   margin: 0;
 }
 .clock-component__button {
@@ -107,10 +95,10 @@
   font-size: 13px;
   margin-bottom: 6px;
 }
-.clock-component__meta {
+.clock-component__status,
+.clock-component .clock-component__title {
   width: 70%;
   text-align: center;
-  padding-top: 10px;
 }
 .clock-component__status {
   font-size: 40px;
@@ -123,6 +111,7 @@
   margin: 0 0 .7em;
   line-height: 1;
   font-family: 'Space Mono', monospace;
+  color: #fff;
 }
 .clock-component__current-time {
   font-size: 60px;
