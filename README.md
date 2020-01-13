@@ -24,6 +24,12 @@ You will need the following things properly installed on your computer.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 * Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
+## Serve
+
+* `ember build && node scripts/server.js`
+* server will be output to port 4000, requires a reverse proxy (nginx)
+* Visit your app at [http://localhost](http://localhost).
+
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details

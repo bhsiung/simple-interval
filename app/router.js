@@ -12,6 +12,7 @@ Router.map(function() {
   });
   this.route('css-test');
   this.route('new-clock');
+  this.route('not-found', {path: '/*path'});
 });
 
 export default Router;

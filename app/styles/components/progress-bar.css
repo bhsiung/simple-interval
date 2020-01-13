@@ -7,7 +7,7 @@
 }
 .progress__rect {
   box-shadow: var(--clock-color) 0 0 0 1px;
-  margin-left: 10px;
+  margin-left: 6px;
   height: 100%;
   flex: 1;
 }
