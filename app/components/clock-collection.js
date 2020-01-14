@@ -1,4 +1,12 @@
-import Component from '@glimmer/component';
+import Component from '@ember/component';
+import { connect } from 'ember-redux';
 
-export default class ClockCollectionComponent extends Component {
+const stateToComputed = (state) => ({
+  configs: state.clocks
+});
+
+class ClockCollectionComponent extends Component {
+  tagName = ''
 }
+
+export default connect(stateToComputed)(ClockCollectionComponent);

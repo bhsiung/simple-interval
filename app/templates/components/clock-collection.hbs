@@ -1,4 +1,4 @@
-{{#each @configs as |config i|}}
+{{#each this.configs as |config i|}}
   <ClockLink @config={{config}} @index={{i}} />
 {{/each}}
 <LinkTo class="clock-link__anchor focusable clock-link__anchor--new" @route="new-clock">

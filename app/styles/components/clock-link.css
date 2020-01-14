@@ -42,20 +42,27 @@
   }
 }
 
-.clock-link__edit {
-    background: #222;
-    border-radius: 50%;
-    border: 2px solid var(--color1);
-    box-sizing: content-box;
-    color: var(--color2);
-    display: block;
-    font-size: 14px;
-    height: 14px;
-    line-height: 14px;
-    padding: 9px;
-    position: absolute;
-    bottom: 3vh;
-    right: 3vh;
+.clock-link__util[data-purpose="delete"] {
+  bottom: -4vh;
+  right: 20vh;
+}
+.clock-link__util[data-purpose="edit"] {
+  bottom: 3vh;
+  right: 3vh;
+}
+.clock-link__util {
+  cursor: pointer;
+  background: #222;
+  border-radius: 50%;
+  border: 2px solid var(--color1);
+  box-sizing: content-box;
+  color: var(--color2);
+  display: block;
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
+  padding: 9px;
+  position: absolute;
 }
 .clock-link__new-icon {
   text-align: center;
@@ -79,13 +86,22 @@
 .clock-link__name {
   text-align: center;
   font-size: 1.3em;
-  margin: 0;
+  margin: 0 0 5px;
   color: #fff;
 }
-.clock-link__duration {
+.clock-link__spec {
   font-size: 13px;
   padding: 0;
   margin: 0;
   text-align: center;
   list-style: none;
+}
+.clock-link__spec-summary-row > td {
+  border-top: 1px solid var(--color1);
+}
+.clock-link__spec td:first-child {
+  text-align: right;
+}
+.clock-link__spec td:last-child {
+  text-align: left;
 }
