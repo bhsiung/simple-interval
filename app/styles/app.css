@@ -27,7 +27,6 @@ body {
 }
 
 header {
-  margin: 0 0 10px;
   border-bottom: 1px solid #888;
   background: #222;
   /* background: #35976F; */
@@ -43,11 +42,24 @@ header a, header a:visited {
   text-decoration: none;
 }
 .app {
-  min-height: calc(100vh - 52px);
+  --body-height: calc(100vh - 66px);
+  height: var(--body-height);
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+}
+.app--centerize {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.app--clock-collection {
+  text-align: center;
+  white-space: nowrap;
+  width: 100vw;
+  overflow: auto;
 }
 
 @media (orientation: landscape) {

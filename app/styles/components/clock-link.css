@@ -1,45 +1,44 @@
 .clock-link {
   position: relative;
+  --border-width: calc(var(--dimension) * 0.01);
+  font-size: calc(var(--dimension)/18);
+}
+@media (orientation: portrait) {
+  .clock-link {
+    --dimension: 80vw;
+    margin-top: 10vw;
+    margin-left: 10vw;
+  }
+}
+@media (orientation: landscape) {
+  .clock-link {
+    --dimension: calc(var(--body-height) * 0.8);
+    margin-top: calc(var(--body-height) * 0.1);
+    margin-left: calc(var(--body-height) * 0.1);
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .clock-link:last-child {
+    margin-right: calc(var(--body-height) * 0.1);
+  }
 }
 .clock-link__anchor {
   transition: background 100ms ease-out;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   align-items: center;
-  border: 2px solid var(--color1);
+  border: var(--border-width) solid var(--color1);
   border-radius: 50%;
   display: flex;
   flex-flow: column;
-  height: 23vh;
-  width: 23vh;
+  height: var(--dimension);
+  width: var(--dimension);
   justify-content: center;
-  margin: 2vh;
-  transition: background 300ms ease-out, color 300ms ease-out;
-  padding: 3vh;
   box-sizing: border-box;
-  min-width: 150px;
-  min-height: 150px;
   color: var(--color1);
   text-decoration: none;
 }
-.clock-link__anchoor:hover, .clock-link__anchor:active {
-  color: var(--color2);
-}
-@media (orientation: portrait) {
-  .clock-link:first-child {
-    margin-top: 4vh;
-  }
-  .clock-link:last-child {
-    margin-bottom: 4vh;
-  }
-}
-
-@media (orientation: landscape) {
-  .clock-link:first-child {
-    margin-left: 4vh;
-  }
-  .clock-link:last-child {
-    margin-right: 4vh;
-  }
+.clock-link__anchor--new {
+  border-color: var(--color2);
 }
 
 .clock-link__util[data-purpose="delete"] {
@@ -85,23 +84,26 @@
 }
 .clock-link__name {
   text-align: center;
-  font-size: 1.3em;
+  font-size: calc(var(--dimension)/8);
   margin: 0 0 5px;
   color: #fff;
 }
 .clock-link__spec {
-  font-size: 13px;
   padding: 0;
   margin: 0;
   text-align: center;
   list-style: none;
+  border: var(--border-width) solid var(--color1);
+  border-collapse: collapse;
 }
-.clock-link__spec-summary-row > td {
-  border-top: 1px solid var(--color1);
+.clock-link__spec td {
+  border: var(--border-width) solid var(--color1);
+  padding: .3em .5em;
 }
 .clock-link__spec td:first-child {
   text-align: right;
 }
 .clock-link__spec td:last-child {
   text-align: left;
+  color: #fff;
 }
