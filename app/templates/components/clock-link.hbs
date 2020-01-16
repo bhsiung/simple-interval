@@ -1,30 +1,15 @@
 <section class="clock-link">
   <LinkTo class="clock-link__anchor focusable" @route="clock" @model={{@index}}>
     <h2 class="clock-link__name">{{@config.name}}</h2>
-    <table class="clock-link__spec">
-      <tr><td>work</td><td>{{ms-to-printable @config.timeOn}}</td></tr>
-      <tr><td>rest</td><td>{{ms-to-printable @config.timeOff}}</td></tr>
-      <tr><td>round</td><td>{{@config.round}}</td></tr>
-      <tr class="clock-link__spec-summary-row">
-        <td>overal</td><td>{{this.totalDuration}}</td>
-      </tr>
-    </table>
+    <section class="clock-link__bd">
+      <table class="clock-link__spec">
+        <tr><td>work</td><td>{{ms-to-printable @config.timeOn}}</td></tr>
+        <tr><td>rest</td><td>{{ms-to-printable @config.timeOff}}</td></tr>
+        <tr><td>round</td><td>{{@config.round}}</td></tr>
+        <tr class="clock-link__spec-summary-row">
+          <td>overal</td><td>{{this.totalDuration}}</td>
+        </tr>
+      </table>
+    </section>
   </LinkTo>
-  {{!--  <LinkTo  --}}
-    {{!--  @route="clock.edit"  --}}
-    {{!--  @model={{@index}}  --}}
-    {{!--  data-purpose="edit"  --}}
-    {{!--  class="clock-link__util focusable"  --}}
-    {{!--  aria-label="edit"  --}}
-  {{!--  >  --}}
-    {{!--  <span class="oi oi-cog" data-glyph="cog" aria-hidden="true"></span>  --}}
-  {{!--  </LinkTo>  --}}
-  {{!--  <button  --}}
-    {{!--  class="clock-link__util focusable"  --}}
-    {{!--  data-purpose="delete"  --}}
-    {{!--  onClick={{action this.onDelete}}  --}}
-    {{!--  aria-label="delete"  --}}
-  {{!--  >  --}}
-    {{!--  <span class="oi oi-trash" data-glyph="trash" aria-hidden="true"></span>  --}}
-  {{!--  </button>  --}}
 </section>

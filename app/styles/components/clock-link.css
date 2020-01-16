@@ -1,6 +1,6 @@
 .clock-link {
   position: relative;
-  --border-width: calc(var(--dimension) * 0.01);
+  --border-width: calc(var(--dimension) * 0.04);
   font-size: calc(var(--dimension)/18);
 }
 @media (orientation: portrait) {
@@ -34,38 +34,22 @@
   width: var(--dimension);
   justify-content: center;
   box-sizing: border-box;
-  color: var(--color1);
   text-decoration: none;
 }
 .clock-link__anchor--new {
+  color: var(--color2);
+  font-size: calc(var(--dimension)/8);
   border-color: var(--color2);
 }
 
-.clock-link__util[data-purpose="delete"] {
-  bottom: -4vh;
-  right: 20vh;
+.clock-link__bd {
+  display: flex;
 }
-.clock-link__util[data-purpose="edit"] {
-  bottom: 3vh;
-  right: 3vh;
-}
-.clock-link__util {
-  cursor: pointer;
-  background: #222;
-  border-radius: 50%;
-  border: 2px solid var(--color1);
-  box-sizing: content-box;
-  color: var(--color2);
-  display: block;
-  font-size: 14px;
-  height: 14px;
-  line-height: 14px;
-  padding: 9px;
-  position: absolute;
+.clock-link__utils {
+  margin-left: .5em;
 }
 .clock-link__new-icon {
   text-align: center;
-  font-size: 1.3em;
   margin: .5em 0 0;
 }
 .clock-link__new-icon-bracket {
@@ -93,15 +77,16 @@
   margin: 0;
   text-align: center;
   list-style: none;
-  border: var(--border-width) solid var(--color1);
+  border: calc(var(--border-width)/2) solid var(--color4);
   border-collapse: collapse;
 }
 .clock-link__spec td {
-  border: var(--border-width) solid var(--color1);
+  border: calc(var(--border-width)/4) solid var(--color4);
   padding: .3em .5em;
 }
 .clock-link__spec td:first-child {
   text-align: right;
+  color: var(--color4);
 }
 .clock-link__spec td:last-child {
   text-align: left;

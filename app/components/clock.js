@@ -1,4 +1,5 @@
 import Component from '@glimmer/component'
+import { inject as service } from '@ember/service';
 import { tracked } from "@glimmer/tracking"
 import { action } from '@ember/object'
 import { msToPrintable } from 'tabata/utils/time-functions'
@@ -34,6 +35,7 @@ function calculatorTotalDuration(timers) {
 }
 
 export default class ClockComponent extends Component {
+  @service redux
   @tracked currentTimerRemaining
   @tracked totalTimerRemaining
   @tracked currentRound
@@ -166,5 +168,11 @@ export default class ClockComponent extends Component {
       this.paused = true
       cancel(this.timer)
     }
+  }
+  onDelete() {
+    this.redux.dispatch({
+      type: 'deleteClock',
+      id: this.args.index
+    })
   }
 }

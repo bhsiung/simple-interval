@@ -1,0 +1,47 @@
+.app-header {
+  --header-height: 128px;
+}
+.app-header {
+  border-image: url(/assets/icons/striped-border.svg) 14 repeat;
+  border-bottom: 10px solid transparent;
+  background: #222;
+}
+.app-header__anchor:visited,
+.app-header__anchor {
+  color: #fff;
+}
+.app-header__anchor {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  font-size: 26px;
+  padding: .5em;
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+}
+.app-header__text {
+  font-size: 80px;
+  line-height: 1;
+}
+.app-header__logo {
+  margin-right: 10px;
+}
+@media(max-width: 850px) {
+  .app-header {
+    border-bottom-width: 2px;
+  }
+  .app {
+    --header-height: 58px;
+  }
+  .app-header__anchor {
+    justify-content: center;
+  }
+  .app-header__text {
+    display: none;
+  }
+  .app-header__logo {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+  }
+}
