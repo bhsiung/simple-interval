@@ -29,8 +29,8 @@
   transition: background 100ms ease-out;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   align-items: center;
-  border: var(--border-width) solid var(--color1);
-  border-radius: 50%;
+  border: var(--border-width) solid;
+  border-image: conic-gradient(var(--color1), var(--color2), var(--color3), var(--color4), var(--color1)) 1;
   display: flex;
   flex-flow: column;
   height: var(--dimension);
