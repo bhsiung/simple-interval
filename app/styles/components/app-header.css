@@ -1,4 +1,4 @@
-.app-header {
+.app {
   --header-height: 128px;
 }
 .app-header {
@@ -37,10 +37,9 @@
     justify-content: center;
   }
   .app-header__text {
-    display: none;
+    font-size: 30px;
   }
   .app-header__logo {
-    margin: 0;
     width: 30px;
     height: 30px;
   }

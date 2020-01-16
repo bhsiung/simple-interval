@@ -4,10 +4,10 @@
     <title>Artboard</title>
     <desc>Created with Sketch.</desc>
     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon id="Rectangle" fill="#FFFFFF" points="18.2803119 0 28 0 9.71968812 24 0 24"></polygon>
-        <polygon id="Rectangle" fill="#FFFFFF" points="46.2803119 0 56 0 37.7196881 24 28 24"></polygon>
-        <polygon id="Rectangle" fill="#FFFFFF" points="60.2803119 0 70 0 51.7196881 24 42 24"></polygon>
-        <polygon id="Rectangle" fill="#FFFFFF" points="32.2803119 0 42 0 23.7196881 24 14 24"></polygon>
-        <polygon id="Rectangle" fill="#FFFFFF" points="4.28031188 0 14 0 -4.28031188 24 -14 24"></polygon>
+        <polygon id="Rectangle" fill="#DDA84E" points="18.2803119 0 28 0 9.71968812 24 0 24"></polygon>
+        <polygon id="Rectangle" fill="#DDA84E" points="46.2803119 0 56 0 37.7196881 24 28 24"></polygon>
+        <polygon id="Rectangle" fill="#DDA84E" points="60.2803119 0 70 0 51.7196881 24 42 24"></polygon>
+        <polygon id="Rectangle" fill="#DDA84E" points="32.2803119 0 42 0 23.7196881 24 14 24"></polygon>
+        <polygon id="Rectangle" fill="#DDA84E" points="4.28031188 0 14 0 -4.28031188 24 -14 24"></polygon>
     </g>
 </svg>
