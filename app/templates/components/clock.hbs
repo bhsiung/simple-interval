@@ -1,27 +1,31 @@
 {{#unless this.shouldShowTimer}}
-  <section class="clock-link__utils">
+  <section class="clock__utils">
     <LinkTo
       @route="clock.edit"
       @model={{hash id=@id}}
       data-purpose="edit"
-      class="clock-link__util"
+      class="clock__util focusable"
       aria-label="edit"
     >
       <span class="oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
+      <span class="clock__util-text">Edit timer</span>
     </LinkTo>
     <button
-      class="clock-link__util"
+      class="clock__util focusable"
       data-purpose="delete"
       onClick={{action this.onDelete}}
       aria-label="delete"
     >
       <span class="oi oi-trash" data-glyph="trash" aria-hidden="true"></span>
+      <span class="clock__util-text">Delete timer</span>
     </button>
   </section>
 {{/unless}}
-<div class="clock-component"
+<div class="clock-component focusable"
   data-status={{if this.shouldShowTimer this.timerState "idle"}}
   onclick={{this.handleMainAction}}
+  onkeydown={{this.handleMainAction}}
+  tabindex="0"
 >
   {{#if this.shouldShowTimer}}
     <span

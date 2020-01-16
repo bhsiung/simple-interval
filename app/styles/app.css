@@ -78,7 +78,7 @@ body {
 }
 .focusable:hover,
 .focusable:focus {
-  box-shadow: rgba(255,255,255,.2) 0px 0px 10px 5px
+  box-shadow: rgba(255,255,255,.2) 10px 0px 80px 0;
 }
 .inline-icon {
   vertical-align: middle;

@@ -7,7 +7,7 @@
   flex-flow: column;
   justify-content: center;
   margin-bottom: 5vh;
-  margin: 20px auto;
+  margin: 0 auto;
   min-height: 300px;
   min-width: 300px;
   position: relative;
@@ -49,6 +49,7 @@
   border: 0;
   --clock-color: var(--color1);
   color: var(--color1);
+  min-height: 0;
 }
 .clock-component[data-status="idle"] .clock-component__status{
   font-size: 7vh;
@@ -124,3 +125,21 @@
   border-radius: 5px;
 }
 
+.clock__utils {
+  margin-bottom: 1em;
+}
+.clock__util {
+  border: solid var(--color4) 1px;
+  background: transparent;
+  color: var(--color4);
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: .5em;
+  text-decoration: none;
+  margin-left: .5em;
+}
+.clock__util:first-child {
+  margin-left: 0;
+}
