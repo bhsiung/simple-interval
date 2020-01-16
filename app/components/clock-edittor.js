@@ -4,7 +4,7 @@ import { inject as service } from '@ember/service';
 
 const DEFAULT_TIME_ON = 30000
 const DEFAULT_TIME_OFF = 30000
-const DEFAULT_NAME = 'New workout'
+const DEFAULT_NAME = 'New'
 const DEFAULT_ROUND = 4
 
 export default class ClockLinkComponent extends Component {

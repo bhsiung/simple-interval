@@ -35,6 +35,7 @@ function calculatorTotalDuration(timers) {
 }
 
 export default class ClockComponent extends Component {
+  @service router
   @service redux
   @tracked currentTimerRemaining
   @tracked totalTimerRemaining
@@ -172,7 +173,8 @@ export default class ClockComponent extends Component {
   onDelete() {
     this.redux.dispatch({
       type: 'deleteClock',
-      id: this.args.index
+      id: parseInt(this.args.id)
     })
+    this.router.transitionTo('index')
   }
 }
