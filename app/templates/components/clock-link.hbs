@@ -11,5 +11,26 @@
         </tr>
       </table>
     </section>
+    <section class="clock__utils">
+      <LinkTo
+        @route="clock.edit"
+        @model={{hash id=@index}}
+        data-purpose="edit"
+        class="clock__util focusable focusable--text"
+        aria-label="edit"
+      >
+        <span class="oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
+        <span class="clock__util-text">Edit</span>
+      </LinkTo>
+      <button
+        class="clock__util focusable focusable--text"
+        data-purpose="delete"
+        onClick={{action this.onDelete}}
+        aria-label="delete"
+      >
+        <span class="oi oi-trash" data-glyph="trash" aria-hidden="true"></span>
+        <span class="clock__util-text">Delete</span>
+      </button>
+    </section>
   </LinkTo>
 </section>

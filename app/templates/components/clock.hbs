@@ -1,26 +1,3 @@
-{{#unless this.shouldShowTimer}}
-  <section class="clock__utils">
-    <LinkTo
-      @route="clock.edit"
-      @model={{hash id=@id}}
-      data-purpose="edit"
-      class="clock__util focusable"
-      aria-label="edit"
-    >
-      <span class="oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
-      <span class="clock__util-text">Edit timer</span>
-    </LinkTo>
-    <button
-      class="clock__util focusable"
-      data-purpose="delete"
-      onClick={{action this.onDelete}}
-      aria-label="delete"
-    >
-      <span class="oi oi-trash" data-glyph="trash" aria-hidden="true"></span>
-      <span class="clock__util-text">Delete timer</span>
-    </button>
-  </section>
-{{/unless}}
 <div class="clock-component focusable"
   data-status={{if this.shouldShowTimer this.timerState "idle"}}
   onclick={{this.handleMainAction}}
@@ -35,10 +12,10 @@
     </span>
   {{/if}}
   <h2 class="clock-component__title">
-    <b>{{~@config.name~}}</b>
+    <b>{{~this.config.name~}}</b>
     {{~#if this.shouldShowTimer}}
       <span class="clock-component__round">
-        round {{plus-one this.currentRound}} of {{@config.round}}
+        round {{plus-one this.currentRound}} of {{this.config.round}}
       </span>
     {{/if~}}
   </h2>
@@ -46,7 +23,7 @@
     {{this.statusText}}
   </p>
   {{#if this.shouldShowTimer}}
-    <ProgressBar @total={{@config.round}} @current={{this.currentRound}}/>
+    <ProgressBar @total={{this.config.round}} @current={{this.currentRound}}/>
     <div class="clock-component__timer">
       <span class="clock-component__current-time">{{this.second}}</span>
     </div>

@@ -81,7 +81,7 @@
   border-collapse: collapse;
 }
 .clock-link__spec td {
-  border: calc(var(--border-width)/8) solid var(--color4);
+  border: 1px solid var(--color4);
   padding: .3em .5em;
 }
 .clock-link__spec td:first-child {
@@ -91,4 +91,25 @@
 .clock-link__spec td:last-child {
   text-align: left;
   color: #fff;
+}
+
+.clock__utils {
+  margin-top: 1em;
+  --util-color: #fff;
+}
+.clock__util {
+  border: solid var(--util-color);
+  border-width: 0 0 1px 0;
+  background: transparent;
+  color: var(--util-color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: .5em;
+  text-decoration: none;
+  margin-left: .5em;
+}
+.clock__util:first-child {
+  margin-left: 0;
 }

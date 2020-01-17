@@ -12,7 +12,5 @@ export default class ClockRoute extends Route {
       transition.abort()
       this.transitionTo('not-found')
     }
-
-    return { clockConfig }
   }
 }

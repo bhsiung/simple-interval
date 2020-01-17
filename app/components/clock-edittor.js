@@ -34,13 +34,24 @@ export default class ClockLinkComponent extends Component {
   onSubmit(e) {
     const { timeOff, timeOn, round, name } = this;
     e.preventDefault();
-    this.redux.dispatch({
-      type: 'newClock',
-      timeOff,
-      timeOn,
-      round,
-      name,
-    })
+    if (this.args.clockId !== undefined) {
+      this.redux.dispatch({
+        type: 'updateClock',
+        clockId: this.args.clockId,
+        timeOff,
+        timeOn,
+        round,
+        name,
+      })
+    } else {
+      this.redux.dispatch({
+        type: 'newClock',
+        timeOff,
+        timeOn,
+        round,
+        name,
+      })
+    }
     this.router.transitionTo('index')
   }
 }

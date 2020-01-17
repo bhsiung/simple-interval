@@ -7,7 +7,7 @@
     <label class="clock-edit__form-label">name</label>
     <input
       type="text"
-      class="clock-edit__form-control"
+      class="clock-edit__form-control focusable"
       maxlength="10"
       value={{this.name}}
       oninput={{action this.onChange "name"}}
@@ -16,7 +16,7 @@
   <div class="clock-edit__form-group">
     <label class="clock-edit__form-label">rounds ({{this.round}})</label>
     <input
-      class="clock-edit__form-control"
+      class="clock-edit__form-control focusable"
       type="range"
       min="1"
       max="20"
@@ -28,7 +28,7 @@
   <div class="clock-edit__form-group">
     <label class="clock-edit__form-label">work ({{ms-to-printable this.timeOn}})</label>
     <input
-      class="clock-edit__form-control"
+      class="clock-edit__form-control focusable"
       type="range"
       min="10000"
       max="120000"
@@ -40,7 +40,7 @@
   <div class="clock-edit__form-group">
     <label class="clock-edit__form-label">rest ({{ms-to-printable this.timeOff}})</label>
     <input
-      class="clock-edit__form-control"
+      class="clock-edit__form-control focusable"
       type="range"
       min="10000"
       max="120000"
@@ -53,13 +53,13 @@
     <label class="clock-edit__form-label">total duration</label>
     <input
       type="text"
-      class="clock-edit__form-control"
+      class="clock-edit__form-control focusable"
       read-only
       value={{ms-to-printable this.totalDuration}}
     >
   </div>
   <div class="clock-edit__form-group">
-    <LinkTo @route="index" class="btn btn--secondary focusable">nevermind</LinkTo>
+    <LinkTo @route="clock.index" @model={{hash id=@clockId}} class="btn btn--secondary focusable">nevermind</LinkTo>
     <input class="btn focusable" type="submit" value="looks good">
   </div>
 </form>

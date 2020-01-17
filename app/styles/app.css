@@ -3,6 +3,7 @@
 @import "components/clock-link";
 @import "components/clock-edit";
 @import "components/app-header";
+@import "utils/focusable";
 
 :root {
   --color1: #DD6C4E;
@@ -10,6 +11,7 @@
   --color3: #4a74a1;
   --color4: #35976F;
   --background: #333;
+  --min-clock-dimension: 300px;
 }
 
 /*
@@ -18,6 +20,9 @@
  * font
  * https://fonts.google.com/selection?category=Display,Handwriting&selection.family=Baloo+Bhaijaan|Expletus+Sans|Fugaz+One|Londrina+Solid|Medula+One|Oleo+Script|Racing+Sans+One|Shrikhand
  */
+input {
+  font-family: 'Baumans', "Ariel";
+}
 body {
   font-family: 'Baumans', "Ariel";
   color: #fff;
@@ -30,10 +35,7 @@ body {
 .app {
   --body-height: calc(100vh - var(--header-height));
   height: var(--body-height);
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
+  min-height: calc(var(--min-clock-dimension) + 20px);
 }
 .app--centerize {
   display: flex;
@@ -74,14 +76,6 @@ body {
 .normal {
   width: 1000px;
   margin: 0 auto;
-}
-.focusable {
-    transition: box-shadow 100ms ease-out;
-    outline: none;
-}
-.focusable:hover,
-.focusable:focus {
-  box-shadow: rgba(255,255,255,.2) 10px 0px 80px 0;
 }
 .inline-icon {
   vertical-align: middle;

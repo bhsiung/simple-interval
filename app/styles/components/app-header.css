@@ -1,10 +1,15 @@
+/* html located at applicatiom.hbs */
+
 .app {
   --header-height: 128px;
 }
 .app-header {
-  border-image: url(/assets/icons/striped-border.svg) 14 repeat;
-  border-bottom: 10px solid transparent;
+  /* border-image: url(/assets/icons/striped-border.svg) 14 repeat; */
+  /* border-bottom: 10px solid transparent; */
+  box-shadow: #000 0 5px 50px 0;
   background: #222;
+  --font-size-large: 30px;
+  --font-size-small: 20px;
 }
 .app-header__anchor:visited,
 .app-header__anchor {
@@ -20,13 +25,18 @@
   align-items: baseline;
 }
 .app-header__text {
-  font-size: 80px;
+  font-size: var(--font-size-large);
   line-height: 1;
 }
 .app-header__logo {
   margin-right: 10px;
+  width: var(--font-size-large);
+  height: var(--font-size-large);
 }
-@media(max-width: 850px) {
+
+/* ----------------------------mini mode----------------------------- */
+
+@media (max-width: 850px), (max-height: 500px) {
   .app-header {
     border-bottom-width: 2px;
   }
@@ -37,10 +47,10 @@
     justify-content: center;
   }
   .app-header__text {
-    font-size: 30px;
+    font-size: var(--font-size-small);
   }
   .app-header__logo {
-    width: 30px;
-    height: 30px;
+    width: var(--font-size-small);
+    height: var(--font-size-small);
   }
 }

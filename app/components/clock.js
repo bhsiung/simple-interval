@@ -35,7 +35,6 @@ function calculatorTotalDuration(timers) {
 }
 
 export default class ClockComponent extends Component {
-  @service router
   @service redux
   @tracked currentTimerRemaining
   @tracked totalTimerRemaining
@@ -44,6 +43,10 @@ export default class ClockComponent extends Component {
   @tracked started
   @tracked paused
   @tracked completed
+
+  get config() {
+    return this.redux.getState().clocks[this.args.id]
+  }
 
   get progress() {
     return this.currentTimerRemaining / this.timers[this.timerIndex].duration
@@ -85,7 +88,7 @@ export default class ClockComponent extends Component {
   constructor() {
     super(...arguments)
     this.state = STATE_PREP
-    this.timers = generateTimers(this.args.config)
+    this.timers = generateTimers(this.config)
     this.totalDuration = calculatorTotalDuration(this.timers)
     this.resetTimer()
   }
@@ -145,7 +148,7 @@ export default class ClockComponent extends Component {
     e.stopPropagation();
     this.started = false
     this.paused = false
-    clearInterval(this.timer)
+    cancel(this.timer)
     this.resetTimer()
     return false;
   }
@@ -169,12 +172,5 @@ export default class ClockComponent extends Component {
       this.paused = true
       cancel(this.timer)
     }
-  }
-  onDelete() {
-    this.redux.dispatch({
-      type: 'deleteClock',
-      id: parseInt(this.args.id)
-    })
-    this.router.transitionTo('index')
   }
 }
