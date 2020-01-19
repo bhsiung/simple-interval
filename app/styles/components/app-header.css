@@ -1,11 +1,9 @@
 /* html located at applicatiom.hbs */
 
 .app {
-  --header-height: 128px;
+  --header-height: 61px;
 }
 .app-header {
-  /* border-image: url(/assets/icons/striped-border.svg) 14 repeat; */
-  /* border-bottom: 10px solid transparent; */
   box-shadow: #000 0 5px 50px 0;
   background: #222;
   --font-size-large: 30px;
@@ -37,11 +35,8 @@
 /* ----------------------------mini mode----------------------------- */
 
 @media (max-width: 850px), (max-height: 500px) {
-  .app-header {
-    border-bottom-width: 2px;
-  }
   .app {
-    --header-height: 58px;
+    --header-height: 49px;
   }
   .app-header__anchor {
     justify-content: center;

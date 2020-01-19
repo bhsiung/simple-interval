@@ -81,7 +81,7 @@ export default class ClockComponent extends Component {
     if (!this.started) return htmlSafe('CLICK TO START<br><span class="oi oi-heart breathing-font" data-glyph="heart" aria-hidden="true"></span>')
     if (timerState === STATE_PREP) return "GET READY..."
     else if (timerState === STATE_REST) return "REST"
-    else if (timerState === STATE_WORKOUT) return "GO GO GO!!"
+    else if (timerState === STATE_WORKOUT) return "BEGIN"
     else throw new Error('something wrong')
   }
 
