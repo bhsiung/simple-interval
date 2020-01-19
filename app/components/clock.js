@@ -35,6 +35,7 @@ function calculatorTotalDuration(timers) {
 }
 
 export default class ClockComponent extends Component {
+  @service router
   @service redux
   @tracked currentTimerRemaining
   @tracked totalTimerRemaining
