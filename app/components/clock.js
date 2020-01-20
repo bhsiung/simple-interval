@@ -62,7 +62,6 @@ export default class ClockComponent extends Component {
   }
 
   get second() {
-    // return (this.currentTimerRemaining / 1000).toFixed(2).replace(/\./, ':')
     return msToPrintable(this.currentTimerRemaining)
   }
 
@@ -117,26 +116,42 @@ export default class ClockComponent extends Component {
     this.sound.pause()
   }
 
+  speak(content) {
+    if (window && window.speechSynthesis) {
+      const utter = new SpeechSynthesisUtterance(content)
+      utter.lang = 'en-US'
+      window.speechSynthesis.speak(utter)
+    }
+  }
+
   loop() {
     // still running the same timer
     if (this.currentTimerRemaining > 0) {
       this.currentTimerRemaining -= TIMER_INTERVAL
       this.totalTimerRemaining -= TIMER_INTERVAL
+      if (this.currentTimerRemaining === 3500) this.speak('3')
+      if (this.currentTimerRemaining === 2500) this.speak('2')
+      if (this.currentTimerRemaining === 1500) this.speak('1')
       this.timer = later(this, this.loop, TIMER_INTERVAL)
       return
     }
     // the last round
     if (this.timerIndex >= this.timers.length - 1) {
       this.completed = true
-      this.playSound(SOUND_OCCASSION_END)
+      // this.playSound(SOUND_OCCASSION_END)
+      this.speak('congraturation')
       return
     }
     // shift to the next timer
     if (this.timers[this.timerIndex].state === STATE_REST) {
       this.currentRound++
-      this.playSound(SOUND_OCCASSION_START)
-    } else {
-      this.playSound(SOUND_OCCASSION_BREAK)
+      // this.playSound(SOUND_OCCASSION_START)
+      this.speak('start workout')
+    } else if (this.timers[this.timerIndex].state === STATE_WORKOUT) {
+      // this.playSound(SOUND_OCCASSION_BREAK)
+      this.speak('take a rest')
+    } else if (this.timers[this.timerIndex].state === STATE_PREP) {
+      this.speak('start workout')
     }
     this.timerIndex++
     this.currentTimerRemaining = this.timers[this.timerIndex].duration

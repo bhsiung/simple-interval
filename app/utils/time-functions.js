@@ -4,7 +4,7 @@
  * @returns {string}
  */
 export function msToPrintable(ms) {
-  const int = Math.round(ms/1000)
+  const int = Math.ceil(ms/1000)
   let m = Math.floor(int / 60)
   let s = int % 60
 
