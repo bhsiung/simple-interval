@@ -12,14 +12,20 @@
   min-width: var(--min-clock-dimension);
   position: relative;
   transition: background 300ms ease-out, color 300ms ease-out;
-  height: 48vh;
-  width: 48vh;
+  --timer-dimenssion: calc(var(--body-height) * 0.85);
+  height: var(--timer-dimenssion);
+  width: var(--timer-dimenssion);
+}
+@media (orientation: portrait) {
+  .clock-component {
+    --timer-dimenssion: 85vw;
+  }
 }
 .clock-component__pause-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 70px;
+  font-size: calc(var(--timer-dimenssion) / 3);
   transform: translate(-50%, -50%) scale(2);
   filter: blur(2px);
   opacity: 0;
@@ -52,10 +58,10 @@
   background: var(--background2);
 }
 .clock-component[data-status="idle"] .clock-component__status{
-  font-size: 7vh;
+  font-size: calc(var(--timer-dimenssion) * 0.14);
 }
 .clock-component[data-status="idle"] .clock-component__title{
-    font-size: 3vh;
+    font-size: calc(var(--timer-dimenssion) * 0.07);
     opacity: .6;
 }
 .clock-component__svg-outer {
@@ -91,10 +97,11 @@
   color: inherit;
   position: relative;
   z-index: 1;
+  font-size: calc(var(--timer-dimenssion) * 0.03);
 }
 .clock-component .clock-component__title {
-  font-size: 13px;
-  margin-bottom: 6px;
+  font-size: calc(var(--timer-dimenssion) * 0.05);
+  margin-bottom: calc(var(--timer-dimenssion) * 0.01);
 }
 .clock-component__status,
 .clock-component .clock-component__title {
@@ -102,7 +109,7 @@
   text-align: center;
 }
 .clock-component__status {
-  font-size: 40px;
+  font-size: calc(var(--timer-dimenssion) * 0.1);
 }
 .clock-component__round::before {
   content: '|';
@@ -115,7 +122,7 @@
   color: #fff;
 }
 .clock-component__current-time {
-  font-size: 60px;
+  font-size: calc(var(--timer-dimenssion) * 0.2);
 }
 .clock-component__toggle {
   border: 1px solid #fff;

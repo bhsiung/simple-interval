@@ -1,6 +1,6 @@
 .progress {
-  height: 10px;
-  margin: 5px 0;
+  height: calc(var(--timer-dimenssion) * 0.03);
+  margin: calc(var(--timer-dimenssion) * 0.02) 0;
   width: 50%;
   display: flex;
   transform: skewX(-15deg);
