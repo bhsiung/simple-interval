@@ -6,19 +6,22 @@
 .app-header {
   box-shadow: #000 0 5px 50px 0;
   background: #222;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
   --font-size-large: 30px;
   --font-size-small: 20px;
 }
-.app-header__anchor:visited,
-.app-header__anchor {
+.app-header a:visited,
+.app-header a {
   color: #fff;
+  text-decoration: none;
 }
 .app-header__anchor {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
   font-size: 26px;
   padding: .5em;
-  text-decoration: none;
   display: flex;
   align-items: baseline;
 }
@@ -30,6 +33,15 @@
   margin-right: 10px;
   width: var(--font-size-large);
   height: var(--font-size-large);
+}
+.app-header__menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.app-header__menu > a {
+  text-align: center;
+  display: block;
+  border-bottom: 3px solid #fff;
 }
 
 /* ----------------------------mini mode----------------------------- */
@@ -45,7 +57,7 @@
     font-size: var(--font-size-small);
   }
   .app-header__logo {
-    width: var(--font-size-small);
-    height: var(--font-size-small);
+    width: calc(var(--font-size-small) * 1.5);
+    height: auto;
   }
 }
