@@ -3,9 +3,8 @@
 }
 
 .clock-edit {
-  width: 70vw;
   min-width: 300px;
-  margin: 5vh auto;
+  margin: 5vh;
   background: rgba(60,60,60,.8);
   padding: 20px;
   box-sizing: border-box;
