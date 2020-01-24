@@ -4,10 +4,26 @@
     {{!--  <img class="app-header__logo" src="/assets/icons/big-logo.svg" />  --}}
     <span class="app-header__text">ATHLETIC CLOCK</span>
   </LinkTo>
-  <section class="app-header__menu">
-    <LinkTo @route="new-clock" class="app-header__menu-item">About</LinkTo>
-    <LinkTo @route="new-clock" class="app-header__menu-item">Create new</LinkTo>
-    <LinkTo @route="index" class="app-header__menu-item">Timers</LinkTo>
+  <section class="app-header__menu-wrapper">
+    <input class="app-header__menu-checker" type="checkbox" id="foo">
+    <label class="app-header__menu-icon" for="foo">
+      <span class="oi oi-menu app-header__menu-icon-menu" data-glyph="menu" aria-hidden="true"></span>
+      <span class="oi oi-x app-header__menu-icon-x" data-glyph="x" aria-hidden="true"></span>
+    </label>
+    <section class="app-header__menu">
+      <LinkTo @route="about" class="app-header__menu-item">
+        <span class="oi oi-book" data-glyph="book" aria-hidden="true"></span>
+        about
+      </LinkTo>
+      <LinkTo @route="new-clock" class="app-header__menu-item">
+        <span class="oi oi-plus" data-glyph="plus" aria-hidden="true"></span>
+        new
+      </LinkTo>
+      <LinkTo @route="index" class="app-header__menu-item">
+        <span class="oi oi-list" data-glyph="list" aria-hidden="true"></span>
+        list
+      </LinkTo>
+    </section>
   </section>
 </header>
 {{outlet}}
