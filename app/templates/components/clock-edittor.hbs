@@ -54,12 +54,12 @@
     <input
       type="text"
       class="clock-edit__form-control focusable"
-      read-only
+      readonly
       value={{ms-to-printable this.totalDuration}}
     >
   </div>
   <div class="clock-edit__form-group">
-    <LinkTo @route="clock.index" @model={{hash id=@clockId}} class="btn btn--secondary focusable">nevermind</LinkTo>
+    <LinkTo @route="index" class="btn btn--secondary focusable">nevermind</LinkTo>
     <input class="btn focusable" type="submit" value="looks good">
   </div>
 </form>

@@ -3,6 +3,7 @@
 @import "components/clock-link";
 @import "components/clock-edit";
 @import "components/app-header";
+@import "about";
 @import "utils/focusable";
 @import "utils/variables";
 
