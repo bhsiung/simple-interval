@@ -1,4 +1,4 @@
-.clock-component {
+.timer-component {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   align-items: center;
   border-radius: 50%;
@@ -8,8 +8,8 @@
   justify-content: center;
   margin-bottom: 5vh;
   margin: 0 auto;
-  min-height: var(--min-clock-dimension);
-  min-width: var(--min-clock-dimension);
+  min-height: var(--min-timer-dimension);
+  min-width: var(--min-timer-dimension);
   position: relative;
   transition: background 300ms ease-out, color 300ms ease-out;
   --timer-dimenssion: calc(var(--body-height) * 0.85);
@@ -17,11 +17,11 @@
   width: var(--timer-dimenssion);
 }
 @media (orientation: portrait) {
-  .clock-component {
+  .timer-component {
     --timer-dimenssion: 85vw;
   }
 }
-.clock-component__pause-overlay {
+.timer-component__pause-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -32,65 +32,65 @@
   visibility: hidden;
   transition: all ease-out 150ms;
 }
-.clock-component:active .clock-component__pause-overlay{
+.timer-component:active .timer-component__pause-overlay{
   opacity: 1;
   visibility: visible;
   filter: blur(0);
   transform: translate(-50%, -50%) scale(1)
 }
-.clock-component[data-status="STATE_WORKOUT"] {
+.timer-component[data-status="STATE_WORKOUT"] {
   color: var(--color2);
-  --clock-color: var(--color2);
+  --timer-color: var(--color2);
 }
-.clock-component[data-status="STATE_PREP"] {
+.timer-component[data-status="STATE_PREP"] {
   color: var(--color3);
-  --clock-color: var(--color3);
+  --timer-color: var(--color3);
 }
-.clock-component[data-status="STATE_REST"] {
+.timer-component[data-status="STATE_REST"] {
   color: var(--color4);
-  --clock-color: var(--color4);
+  --timer-color: var(--color4);
 }
 
-.clock-component[data-status="idle"] {
+.timer-component[data-status="idle"] {
   border: 0;
-  --clock-color: var(--color1);
+  --timer-color: var(--color1);
   color: var(--color1);
   background: var(--background2);
 }
-.clock-component[data-status="idle"] .clock-component__status{
+.timer-component[data-status="idle"] .timer-component__status{
   font-size: calc(var(--timer-dimenssion) * 0.14);
 }
-.clock-component[data-status="idle"] .clock-component__title{
+.timer-component[data-status="idle"] .timer-component__title{
     font-size: calc(var(--timer-dimenssion) * 0.07);
     opacity: .6;
 }
-.clock-component__svg-outer {
+.timer-component__svg-outer {
     position: absolute;
     top: 0;
     left: 0;
 }
-.clock-component__svg-outer--shadow {
+.timer-component__svg-outer--shadow {
   opacity: .2;
 }
-.clock-component__svg {
+.timer-component__svg {
     position: absolute;
     top: 5%;
     left: 5%;
 }
-.clock-component__circle--animated {
+.timer-component__circle--animated {
   stroke-dasharray: 301.59%;
   stroke-dashoffset: -301.59%;
   /* animation: dash 5s linear; */
 }
-.clock-component .clock-component__circle{
-  stroke: var(--clock-color);
+.timer-component .timer-component__circle{
+  stroke: var(--timer-color);
 }
 
-.clock-component h2,
-.clock-component__status {
+.timer-component h2,
+.timer-component__status {
   margin: 0;
 }
-.clock-component__button {
+.timer-component__button {
   cursor: pointer;
   border: 1px solid;
   background: transparent;
@@ -99,32 +99,32 @@
   z-index: 1;
   font-size: calc(var(--timer-dimenssion) * 0.03);
 }
-.clock-component .clock-component__title {
+.timer-component .timer-component__title {
   font-size: calc(var(--timer-dimenssion) * 0.05);
   margin-bottom: calc(var(--timer-dimenssion) * 0.01);
 }
-.clock-component__status,
-.clock-component .clock-component__title {
+.timer-component__status,
+.timer-component .timer-component__title {
   width: 70%;
   text-align: center;
 }
-.clock-component__status {
+.timer-component__status {
   font-size: calc(var(--timer-dimenssion) * 0.1);
 }
-.clock-component__round::before {
+.timer-component__round::before {
   content: '|';
   margin: 0 .2em;
 }
-.clock-component .clock-component__timer {
+.timer-component .timer-component__timer {
   margin: 0 0 .7em;
   line-height: 1;
   font-family: 'Space Mono', monospace;
   color: #fff;
 }
-.clock-component__current-time {
+.timer-component__current-time {
   font-size: calc(var(--timer-dimenssion) * 0.2);
 }
-.clock-component__toggle {
+.timer-component__toggle {
   border: 1px solid #fff;
   background: transparent;
   color: #fff;

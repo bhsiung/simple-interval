@@ -5,8 +5,8 @@ export default class IndexRoute extends Route {
   @service redux
 
   async model() {
-    const { clocks: clockConfigs } = this.redux.store.getState()
+    const { timers: timerConfigs } = this.redux.store.getState()
 
-    return { clockConfigs }
+    return { timerConfigs }
   }
 }

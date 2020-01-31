@@ -1,22 +1,22 @@
-<form class="clock-edit" onsubmit={{action this.onSubmit}}>
-  <h2 class="clock-edit__title">
+<form class="timer-edit" onsubmit={{action this.onSubmit}}>
+  <h2 class="timer-edit__title">
     <span class="inline-icon oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
-    <span>Customize your clock</span>
+    <span>Customize your timer</span>
   </h2>
-  <div class="clock-edit__form-group">
-    <label class="clock-edit__form-label">name</label>
+  <div class="timer-edit__form-group">
+    <label class="timer-edit__form-label">name</label>
     <input
       type="text"
-      class="clock-edit__form-control focusable"
+      class="timer-edit__form-control focusable"
       maxlength="10"
       value={{this.name}}
       oninput={{action this.onChange "name"}}
     >
   </div>
-  <div class="clock-edit__form-group">
-    <label class="clock-edit__form-label">rounds ({{this.round}})</label>
+  <div class="timer-edit__form-group">
+    <label class="timer-edit__form-label">rounds ({{this.round}})</label>
     <input
-      class="clock-edit__form-control focusable"
+      class="timer-edit__form-control focusable"
       type="range"
       min="1"
       max="20"
@@ -25,10 +25,10 @@
       oninput={{action this.onChange "round"}}
     >
   </div>
-  <div class="clock-edit__form-group">
-    <label class="clock-edit__form-label">work ({{ms-to-printable this.timeOn}})</label>
+  <div class="timer-edit__form-group">
+    <label class="timer-edit__form-label">work ({{ms-to-printable this.timeOn}})</label>
     <input
-      class="clock-edit__form-control focusable"
+      class="timer-edit__form-control focusable"
       type="range"
       min="10000"
       max="120000"
@@ -37,10 +37,10 @@
       oninput={{action this.onChange "timeOn"}}
     >
   </div>
-  <div class="clock-edit__form-group">
-    <label class="clock-edit__form-label">rest ({{ms-to-printable this.timeOff}})</label>
+  <div class="timer-edit__form-group">
+    <label class="timer-edit__form-label">rest ({{ms-to-printable this.timeOff}})</label>
     <input
-      class="clock-edit__form-control focusable"
+      class="timer-edit__form-control focusable"
       type="range"
       min="10000"
       max="120000"
@@ -49,16 +49,16 @@
       oninput={{action this.onChange "timeOff"}}
     >
   </div>
-  <div class="clock-edit__form-group">
-    <label class="clock-edit__form-label">total duration</label>
+  <div class="timer-edit__form-group">
+    <label class="timer-edit__form-label">total duration</label>
     <input
       type="text"
-      class="clock-edit__form-control focusable"
+      class="timer-edit__form-control focusable"
       readonly
       value={{ms-to-printable this.totalDuration}}
     >
   </div>
-  <div class="clock-edit__form-group clock-edit__cta-container">
+  <div class="timer-edit__form-group timer-edit__cta-container">
     <LinkTo @route="index" class="btn btn--secondary focusable">nevermind</LinkTo>
     <input class="btn focusable" type="submit" value="looks good">
   </div>

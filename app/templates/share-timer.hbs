@@ -1,6 +1,6 @@
 <section class="app app--centerize">
   {{#if eligibleToShare}}
-    <Clock @name={{name}} @round={{round}} @timeOn={{timeOn}} @timeOff={{timeOff}} />
+    <Timer @name={{name}} @round={{round}} @timeOn={{timeOn}} @timeOff={{timeOff}} />
   {{else}}
     <div class="share-timer__error">Ops, something went wrong with the timer. please double check the URL</div>
   {{/if}}

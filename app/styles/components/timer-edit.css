@@ -2,7 +2,7 @@
   --slider-height: 15px;
 }
 
-.clock-edit {
+.timer-edit {
   min-width: 300px;
   margin: 5vh;
   background: rgba(60,60,60,.8);
@@ -10,27 +10,27 @@
   box-sizing: border-box;
   color: #333;
 }
-.clock-edit__title {
+.timer-edit__title {
   margin: -20px -20px 20px -20px;
   padding: 20px;
   background: #444;
   color: #fff;
 }
-.clock-edit__form-group {
+.timer-edit__form-group {
   margin-bottom: 20px;
 }
-.clock-edit__form-control {
+.timer-edit__form-control {
   width: 100%;
   padding: .5em;
   box-sizing: border-box;
   margin: 0;
 }
-.clock-edit__form-label {
+.timer-edit__form-label {
   margin-bottom: .5em;
   display: block;
   color: var(--color1);
 }
-.clock-edit__form-control[type="range"] {
+.timer-edit__form-control[type="range"] {
   appearance: none;
   border-radius: 8px;
   height: var(--slider-height);
@@ -38,7 +38,7 @@
   background: linear-gradient(90deg, var(--color1), var(--color2));
   outline: none;
 }
-.clock-edit__form-control[type="range"]::-webkit-slider-thumb {
+.timer-edit__form-control[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: calc(var(--slider-height) + 10px);
@@ -48,7 +48,7 @@
   border-radius: 50%;
   box-shadow: rgba(0,0,0,.5) 0 0 10px 0;
 }
-.clock-edit__form-control[type="range"]::-moz-range-thumb {
+.timer-edit__form-control[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: var(--slider-height);
@@ -57,12 +57,12 @@
   cursor: pointer;
   border-radius: 50%;
 }
-.clock-edit__form-control[type="text"] {
+.timer-edit__form-control[type="text"] {
   font-size: 26px;
   background: transparent;
   color: #fff;
   border: 1px solid rgba(255,255,255,.5);
 }
-.clock-edit__cta-container {
+.timer-edit__cta-container {
   text-align: right;
 }

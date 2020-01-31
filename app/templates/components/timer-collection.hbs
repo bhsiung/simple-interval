@@ -1,0 +1,15 @@
+<section class="app app--timer-collection">
+  {{#each this.configs as |config i|}}
+    <TimerLink @config={{config}} @index={{i}} />
+  {{/each}}
+  <section class="timer-link">
+    <LinkTo class="timer-link__anchor focusable timer-link__anchor--new" @route="new-timer">
+      <span>create new</span>
+      <p class="timer-link__new-icon" aria-hidden="true">
+        <span class="timer-link__new-icon-bracket">[</span>
+        <span class="oi oi-plus" data-glyph="plus" aria-hidden="true"></span>
+        <span class="timer-link__new-icon-bracket">]</span>
+      </p>
+    </LinkTo>
+  </section>
+</section>

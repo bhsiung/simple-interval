@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux'
-import clocks from './clocks'
+import timers from './timers'
 
-export default combineReducers({ clocks })
+export default combineReducers({ timers })

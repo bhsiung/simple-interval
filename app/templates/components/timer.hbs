@@ -1,0 +1,38 @@
+<div class="timer-component focusable"
+  data-status={{if this.shouldShowTimer this.timerState "idle"}}
+  onclick={{this.handleMainAction}}
+  onkeydown={{this.handleMainAction}}
+  tabindex="0"
+>
+  {{#if this.shouldShowTimer}}
+    <span
+      class="oi oi-media-{{if this.paused "play" "pause"}} timer-component__pause-overlay"
+      data-glyph="media-{{if this.paused "play" "pause"}}" aria-hidden="true"
+    >
+    </span>
+  {{/if}}
+  <h2 class="timer-component__title">
+    <b>{{~this.config.name~}}</b>
+    {{~#if this.shouldShowTimer}}
+      <span class="timer-component__round">
+        round {{plus-one this.currentRound}} of {{this.config.round}}
+      </span>
+    {{/if~}}
+  </h2>
+  <p class="timer-component__status">
+    {{this.statusText}}
+  </p>
+  {{#if this.shouldShowTimer}}
+    <ProgressBar @total={{this.config.round}} @current={{this.currentRound}}/>
+    <div class="timer-component__timer">
+      <span class="timer-component__current-time">{{this.second}}</span>
+    </div>
+    <button class="timer-component__button focusable" type="button" onclick={{this.handleStop}}>
+      <span class="oi oi-power-standby" data-glyph="power-standby" aria-hidden="true"></span>
+      END WORKOUT
+    </button>
+    <Circle class="timer-component__svg" @radius="90%" @progress={{this.progress}} @hasOuterRing={{true}} />
+    <Circle class="timer-component__svg-outer" @radius="100%" @progress={{this.totalProgress}} />
+    <Circle class="timer-component__svg-outer timer-component__svg-outer--shadow" @radius="100%" @progress={{2}} />
+  {{/if}}
+</div>

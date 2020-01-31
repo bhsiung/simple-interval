@@ -41,7 +41,7 @@ function calculatorTotalDuration(timers) {
  * @param {number} [id] - numeric timer id, map to store
  * @extends {Component}
  */
-export default class ClockComponent extends Component {
+export default class TimerComponent extends Component {
   @service router
   @service redux
   @tracked currentTimerRemaining
@@ -60,7 +60,7 @@ export default class ClockComponent extends Component {
         timeOn: this.args.timeOn,
         timeOff: this.args.timeOff
       }:
-      this.redux.getState().clocks[this.args.id]
+      this.redux.getState().timers[this.args.id]
   }
 
   get progress() {

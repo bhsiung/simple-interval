@@ -1,31 +1,31 @@
-.clock-link {
+.timer-link {
   position: relative;
   --border-width: calc(var(--dimension) * 0.04);
   font-size: calc(var(--dimension)/18);
 }
 @media (orientation: portrait) {
-  .clock-link {
+  .timer-link {
     --dimension: 80vw;
     margin-top: 10vw;
     margin-left: 10vw;
   }
-  .clock-link:last-child {
+  .timer-link:last-child {
     margin-bottom: 10vw;
   }
 }
 @media (orientation: landscape) {
-  .clock-link {
+  .timer-link {
     --dimension: calc(var(--body-height) * 0.8);
     margin-top: calc(var(--body-height) * 0.1);
     margin-left: calc(var(--body-height) * 0.1);
     display: inline-block;
     vertical-align: middle;
   }
-  .clock-link:last-child {
+  .timer-link:last-child {
     margin-right: calc(var(--body-height) * 0.1);
   }
 }
-.clock-link__anchor {
+.timer-link__anchor {
   transition: background 100ms ease-out;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   align-items: center;
@@ -39,40 +39,40 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-.clock-link__anchor--new {
+.timer-link__anchor--new {
   color: var(--color2);
   font-size: calc(var(--dimension)/8);
   border-color: var(--color2);
 }
 
-.clock-link__bd {
+.timer-link__bd {
   display: flex;
 }
-.clock-link__new-icon {
+.timer-link__new-icon {
   text-align: center;
   margin: .5em 0 0;
 }
-.clock-link__new-icon-bracket {
+.timer-link__new-icon-bracket {
   opacity: 0;
   transition: opacity 300ms ease-out;
 }
-.clock-link__anchor--new:hover .clock-link__new-icon-bracket {
+.timer-link__anchor--new:hover .timer-link__new-icon-bracket {
   opacity: 1;
 }
-.clock-link__new-icon > * {
+.timer-link__new-icon > * {
   vertical-align: middle;
 }
-.clock-link__new-icon [data-glyph="plus"] {
+.timer-link__new-icon [data-glyph="plus"] {
   color: #fff;
   margin: 0 .2em;
 }
-.clock-link__name {
+.timer-link__name {
   text-align: center;
   font-size: calc(var(--dimension)/8);
   margin: 0 0 5px;
   color: #fff;
 }
-.clock-link__spec {
+.timer-link__spec {
   padding: 0;
   margin: 0;
   text-align: center;
@@ -80,24 +80,24 @@
   border: calc(var(--border-width)/4) solid var(--color4);
   border-collapse: collapse;
 }
-.clock-link__spec td {
+.timer-link__spec td {
   border: 1px solid var(--color4);
   padding: .3em .5em;
 }
-.clock-link__spec td:first-child {
+.timer-link__spec td:first-child {
   text-align: right;
   color: var(--color4);
 }
-.clock-link__spec td:last-child {
+.timer-link__spec td:last-child {
   text-align: left;
   color: #fff;
 }
 
-.clock__utils {
+.timer__utils {
   margin-top: 1em;
   --util-color: #fff;
 }
-.clock__util {
+.timer__util {
   border: solid var(--util-color);
   border-width: 0 0 1px 0;
   background: transparent;
@@ -110,6 +110,6 @@
   text-decoration: none;
   margin-left: .5em;
 }
-.clock__util:first-child {
+.timer__util:first-child {
   margin-left: 0;
 }

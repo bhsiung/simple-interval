@@ -7,7 +7,7 @@ const DEFAULT_TIME_OFF = 30000
 const DEFAULT_NAME = 'New'
 const DEFAULT_ROUND = 4
 
-export default class ClockLinkComponent extends Component {
+export default class TimerLinkComponent extends Component {
   @service router
   @service redux
   @tracked timeOn
@@ -34,10 +34,10 @@ export default class ClockLinkComponent extends Component {
   onSubmit(e) {
     const { timeOff, timeOn, round, name } = this;
     e.preventDefault();
-    if (this.args.clockId !== undefined) {
+    if (this.args.timerId !== undefined) {
       this.redux.dispatch({
-        type: 'updateClock',
-        clockId: this.args.clockId,
+        type: 'updateTimer',
+        timerId: this.args.timerId,
         timeOff,
         timeOn,
         round,
@@ -45,7 +45,7 @@ export default class ClockLinkComponent extends Component {
       })
     } else {
       this.redux.dispatch({
-        type: 'newClock',
+        type: 'newTimer',
         timeOff,
         timeOn,
         round,

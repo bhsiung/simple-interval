@@ -3,7 +3,7 @@ import { msToPrintable } from 'tabata/utils/time-functions'
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
-export default class ClockLinkComponent extends Component {
+export default class TimerLinkComponent extends Component {
   @service redux
   @service router
   @tracked isShareModalOpen
@@ -39,7 +39,7 @@ export default class ClockLinkComponent extends Component {
     e.stopPropagation();
     if (confirm(`are you sure to delete ${this.args.config.name}?`)) {
       this.redux.dispatch({
-        type: 'deleteClock',
+        type: 'deleteTimer',
         id: parseInt(this.args.index)
       })
       this.router.transitionTo('index')

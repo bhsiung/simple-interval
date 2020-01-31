@@ -2,11 +2,11 @@ import Component from '@ember/component';
 import { connect } from 'ember-redux';
 
 const stateToComputed = (state) => ({
-  configs: state.clocks
+  configs: state.timers
 });
 
-class ClockCollectionComponent extends Component {
+class TimerCollectionComponent extends Component {
   tagName = ''
 }
 
-export default connect(stateToComputed)(ClockCollectionComponent);
+export default connect(stateToComputed)(TimerCollectionComponent);

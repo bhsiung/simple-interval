@@ -6,16 +6,16 @@
   transform: skewX(-15deg);
 }
 .progress__rect {
-  box-shadow: var(--clock-color) 0 0 0 1px;
+  box-shadow: var(--timer-color) 0 0 0 1px;
   margin-left: 6px;
   height: 100%;
   flex: 1;
 }
 .progress__rect--DONE {
-  background-color: var(--clock-color);
+  background-color: var(--timer-color);
 }
 .progress__rect--ACTIVE {
-  background-color: var(--clock-color);
+  background-color: var(--timer-color);
   animation: blink-background 2s infinite normal;
 }
 .progress__rect:first-child {
@@ -23,7 +23,7 @@
 }
 @keyframes blink-background {
   0% { background-color: transparent; }
-  20% { background-color: var(--clock-color); }
-  70% { background-color: var(--clock-color); }
+  20% { background-color: var(--timer-color); }
+  70% { background-color: var(--timer-color); }
   100% { background-color: transparent; }
 }

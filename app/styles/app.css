@@ -1,7 +1,7 @@
 @import "components/progress-bar";
-@import "components/clock";
-@import "components/clock-link";
-@import "components/clock-edit";
+@import "components/timer";
+@import "components/timer-link";
+@import "components/timer-edit";
 @import "components/app-header";
 @import "modal";
 @import "about";
@@ -29,7 +29,7 @@ body {
 .app {
   --body-height: calc(100vh - var(--header-height));
   height: var(--body-height);
-  min-height: calc(var(--min-clock-dimension) + 20px);
+  min-height: calc(var(--min-timer-dimension) + 20px);
 }
 .app--centerize {
   display: flex;
@@ -37,7 +37,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.app--clock-collection {
+.app--timer-collection {
   text-align: center;
   white-space: nowrap;
   width: 100vw;

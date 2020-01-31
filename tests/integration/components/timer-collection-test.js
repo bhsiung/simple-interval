@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | clock', function(hooks) {
+module('Integration | Component | timer-collection', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<Clock />`);
+    await render(hbs`<TimerCollection />`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      <Clock>
+      <TimerCollection>
         template block text
-      </Clock>
+      </TimerCollection>
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');
