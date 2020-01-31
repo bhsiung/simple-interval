@@ -5,8 +5,8 @@ module.exports = function(/* environment, appConfig */) {
   // supported properties
 
   return {
-    name: 'Athletic Clock',
-    short_name: 'Athletic Clock',
+    name: 'Simple interval',
+    short_name: 'Simple interval',
     description: 'Free workout timer APP, fully customizable for TABATA or HIIT',
     start_url: '/',
     display: 'standalone',
