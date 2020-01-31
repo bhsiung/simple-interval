@@ -1,0 +1,38 @@
+.app>.ember-view {
+  display: none;
+}
+.ember-modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: rgba(0,0,0,.6);
+}
+.ember-modal-dialog {
+  position: absolute;
+  width: 50vw;
+  background: var(--color1);
+  left: 25vw;
+  top: 20vh;
+  padding: 1em;
+  box-sizing: border-box;
+  font-size: 20px;
+  display: grid;
+  grid-gap: 1em;
+}
+.ember-modal-dialog__header {
+  margin: 0;
+}
+.ember-modal-dialog__footer {
+  text-align: right;
+}
+.ember-modal-dialog button {
+  font-size: 20px;
+}
+.ember-modal-dialog input[type="url"] {
+  padding: 1em;
+  border: 0;
+  font-size: 20px;
+}
