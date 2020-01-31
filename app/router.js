@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('new-clock');
   this.route('not-found', {path: '/*path'});
   this.route('about');
+  this.route('share-timer');
 });
 
 export default Router;

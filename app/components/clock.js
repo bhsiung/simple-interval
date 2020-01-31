@@ -34,6 +34,13 @@ function calculatorTotalDuration(timers) {
   return timers.reduce((total, { duration }) => total + duration, 0)
 }
 
+/**
+ * main timer component
+ *
+ * @param {number} [id] - numeric timer id, map to store
+ * @param {number} [id] - numeric timer id, map to store
+ * @extends {Component}
+ */
 export default class ClockComponent extends Component {
   @service router
   @service redux
@@ -46,7 +53,14 @@ export default class ClockComponent extends Component {
   @tracked completed
 
   get config() {
-    return this.redux.getState().clocks[this.args.id]
+    return this.args.id === undefined ?
+      {
+        name: this.args.name,
+        round: this.args.round,
+        timeOn: this.args.timeOn,
+        timeOff: this.args.timeOff
+      }:
+      this.redux.getState().clocks[this.args.id]
   }
 
   get progress() {

@@ -16,6 +16,12 @@ export default class ClockLinkComponent extends Component {
 
     return msToPrintable(mseconds)
   }
+  onShare(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    // TODO
+    return false;
+  }
   onDelete(e) {
     e.preventDefault();
     e.stopPropagation();

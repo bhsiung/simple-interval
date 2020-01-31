@@ -31,6 +31,15 @@
         <span class="oi oi-trash" data-glyph="trash" aria-hidden="true"></span>
         <span class="clock__util-text">Delete</span>
       </button>
+      <button
+        class="clock__util focusable focusable--text"
+        data-purpose="delete"
+        onClick={{action this.onShare}}
+        aria-label="delete"
+      >
+        <span class="oi oi-share-boxed" data-glyph="share-boxed" aria-hidden="true"></span>
+        <span class="clock__util-text">Share</span>
+      </button>
     </section>
   </LinkTo>
 </section>
