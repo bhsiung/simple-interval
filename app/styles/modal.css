@@ -34,11 +34,26 @@
 .ember-modal-dialog__footer {
   text-align: right;
 }
+.ember-modal-dialog__url-container {
+  position: relative;
+}
+.ember-modal-dialog__url-input {
+  padding: 1em;
+  border: 0;
+  font-size: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+.ember-modal-dialog__copied-hint {
+  background: var(--color3);
+  position: absolute;
+  padding: .5em;
+  top: 0;
+  left: 0;
+}
 .ember-modal-dialog button {
   font-size: 20px;
 }
 .ember-modal-dialog input[type="url"] {
-  padding: 1em;
-  border: 0;
-  font-size: 20px;
 }

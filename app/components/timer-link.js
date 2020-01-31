@@ -7,6 +7,7 @@ export default class TimerLinkComponent extends Component {
   @service redux
   @service router
   @tracked isShareModalOpen
+  @tracked urlCopied = false
   @tracked shareableUrl
 
   get pace () {
@@ -33,6 +34,7 @@ export default class TimerLinkComponent extends Component {
   onCopy(e) {
     e.target.select();
     document.execCommand('copy');
+    this.urlCopied = true
   }
   onDelete(e) {
     e.preventDefault();

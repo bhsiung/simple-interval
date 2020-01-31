@@ -46,7 +46,15 @@
 {{#if this.isShareModalOpen}}
   {{#modal-dialog}}
     <h4 class="ember-modal-dialog__header">Copy page link</h4>
-    <input onclick={{action this.onCopy}} class="focusable" type="url" value={{this.shareableUrl}} readonly>
+    <div class="ember-modal-dialog__url-container">
+      {{#if this.urlCopied}}
+        <div class="ember-modal-dialog__copied-hint">
+          <span class="oi oi-check" data-glyph="check" aria-hidden="true"></span>
+          Copied
+        </div>
+      {{/if}}
+      <input onclick={{action this.onCopy}} class="focusable ember-modal-dialog__url-input" type="url" value={{this.shareableUrl}} readonly>
+    </div>
     <div class="ember-modal-dialog__footer">
       <button class="timer-component__button focusable" {{action (mut this.isShareModalOpen) false}}>
         <span class="oi oi-x" data-glyph="x" aria-hidden="true"></span>
