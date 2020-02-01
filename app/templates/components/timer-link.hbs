@@ -12,16 +12,15 @@
       </table>
     </section>
     <section class="timer__utils">
-      <LinkTo
-        @route="timer.edit"
-        @model={{hash id=@index}}
-        data-purpose="edit"
+      <button
         class="timer__util focusable focusable--text"
+        data-purpose="edit"
+        onClick={{action this.onEdit}}
         aria-label="edit"
       >
         <span class="oi oi-cog" data-glyph="cog" aria-hidden="true"></span>
         <span class="timer__util-text">Edit</span>
-      </LinkTo>
+      </button>
       <button
         class="timer__util focusable focusable--text"
         data-purpose="delete"

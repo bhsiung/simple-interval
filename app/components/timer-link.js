@@ -55,4 +55,10 @@ export default class TimerLinkComponent extends Component {
     this.router.transitionTo('index')
     return false;
   }
+  onEdit(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.router.transitionTo('timer.edit', { id: this.args.index })
+    return false;
+  }
 }
