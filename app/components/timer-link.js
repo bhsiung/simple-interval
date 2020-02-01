@@ -7,6 +7,7 @@ export default class TimerLinkComponent extends Component {
   @service redux
   @service router
   @tracked isShareModalOpen
+  @tracked isDeleteModalOpen
   @tracked urlCopied = false
   @tracked shareableUrl
 
@@ -25,8 +26,9 @@ export default class TimerLinkComponent extends Component {
     e.preventDefault();
     e.stopPropagation();
     this.isShareModalOpen = true
+    this.urlCopied = false
     const { name, round, timeOn, timeOff } = this.args.config
-    const hostname = 'http://www.simpleinterval.com'
+    const hostname = 'http://simpleinterval.com'
     this.shareableUrl = `${hostname}/share-timer?name=${name}&round=${round}&timeOn=${timeOn}&timeOff=${timeOff}`
 
     return false;
@@ -36,16 +38,21 @@ export default class TimerLinkComponent extends Component {
     document.execCommand('copy');
     this.urlCopied = true
   }
+  onDeleteConfirm(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.isDeleteModalOpen = true
+    return false;
+  }
   onDelete(e) {
     e.preventDefault();
     e.stopPropagation();
-    if (confirm(`are you sure to delete ${this.args.config.name}?`)) {
-      this.redux.dispatch({
-        type: 'deleteTimer',
-        id: parseInt(this.args.index)
-      })
-      this.router.transitionTo('index')
-    }
+    this.isDeleteModalOpen = false
+    this.redux.dispatch({
+      type: 'deleteTimer',
+      id: parseInt(this.args.index)
+    })
+    this.router.transitionTo('index')
     return false;
   }
 }

@@ -1,0 +1,11 @@
+http://simpleinterval.com/
+http://simpleinterval.com/new-timer
+http://simpleinterval.com/timer/0
+http://simpleinterval.com/timer/1
+http://simpleinterval.com/timer/2
+http://simpleinterval.com/timer/0/edit
+http://simpleinterval.com/timer/1/edit
+http://simpleinterval.com/timer/2/edit
+http://simpleinterval.com/share-timer?name=INTENSIVE2&round=6&timeOn=15000&timeOff=30000
+http://simpleinterval.com/share-timer?name=CARDIO&round=8&timeOn=20000&timeOff=10000
+http://simpleinterval.com/share-timer?name=5x5&round=5&timeOn=20000&timeOff=30000

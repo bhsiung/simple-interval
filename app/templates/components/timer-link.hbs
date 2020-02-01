@@ -25,7 +25,7 @@
       <button
         class="timer__util focusable focusable--text"
         data-purpose="delete"
-        onClick={{action this.onDelete}}
+        onClick={{action this.onDeleteConfirm}}
         aria-label="delete"
       >
         <span class="oi oi-trash" data-glyph="trash" aria-hidden="true"></span>
@@ -59,6 +59,19 @@
       <button class="timer-component__button focusable" {{action (mut this.isShareModalOpen) false}}>
         <span class="oi oi-x" data-glyph="x" aria-hidden="true"></span>
         CLOSE
+      </button>
+    </div>
+  {{/modal-dialog}}
+{{/if}}
+{{#if this.isDeleteModalOpen}}
+  {{#modal-dialog}}
+    <h4 class="ember-modal-dialog__header">are you sure to delete {{this.args.config.name}}?</h4>
+    <div class="ember-modal-dialog__footer">
+      <button class="timer-component__button focusable" {{action (mut this.isDeleteModalOpen) false}}>
+        Nevermind, I will keep it
+      </button>
+      <button class="timer-component__button focusable" onClick={{action this.onDelete}}>
+        Yes, delete the timer
       </button>
     </div>
   {{/modal-dialog}}
