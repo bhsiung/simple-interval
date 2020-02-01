@@ -1,8 +1,13 @@
 <header class="app-header">
   <input class="app-header__menu-checker" type="checkbox" id="foo">
   <LinkTo class="app-header__anchor" @route="index" class="text-decoration-none">
-    <img class="app-header__logo" src="/assets/icons/small-logo.svg" width="20" height="20" />
-    {{!--  <img class="app-header__logo" src="/assets/icons/big-logo.svg" />  --}}
+    <img alt="simple interval logo"
+      src="/assets/icons/small-logo.svg"
+      aria-hidden="true"
+      class="app-header__logo"
+      width="20"
+      height="20"
+    />
     <span class="app-header__text">SIMPLE INTERVAL</span>
   </LinkTo>
   <section class="app-header__menu-wrapper">
