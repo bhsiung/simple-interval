@@ -2,6 +2,9 @@
   transition: all 300ms ease-out;
   outline: none;
 }
+.focusable--muted {
+  outline: none;
+}
 .focusable:hover,
 .focusable:focus {
   box-shadow: rgba(255,255,255,.3) 0 0 20px 0;

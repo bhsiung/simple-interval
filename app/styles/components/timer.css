@@ -55,7 +55,6 @@
   border: 0;
   --timer-color: var(--color1);
   color: var(--color1);
-  background: var(--background2);
 }
 .timer-component[data-status="idle"] .timer-component__status{
   font-size: calc(var(--timer-dimenssion) * 0.14);

@@ -12,9 +12,9 @@ Router.map(function() {
   });
   this.route('css-test');
   this.route('new-timer');
-  this.route('not-found', {path: '/*path'});
   this.route('about');
   this.route('share-timer');
+  this.route('not-found', {path: '/*path'});
 });
 
 export default Router;
