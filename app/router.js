@@ -12,7 +12,7 @@ Router.map(function() {
   });
   this.route('css-test');
   this.route('new-timer');
-  this.route('about');
+  // this.route('about');
   this.route('share-timer');
   this.route('not-found', {path: '/*path'});
 });

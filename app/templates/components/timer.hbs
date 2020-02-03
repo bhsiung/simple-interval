@@ -10,6 +10,14 @@
       data-glyph="media-{{if this.paused "play" "pause"}}" aria-hidden="true"
     >
     </span>
+  {{else}}
+    <p class="timer-component__summary">
+      <span>{{ms-to-printable this.config.timeOn}}</span>
+      <span>+</span>
+      <span>{{ms-to-printable this.config.timeOff}}</span>
+      <span>x</span>
+      <span>{{this.config.round}}</span>
+    </p>
   {{/if}}
   <h2 class="timer-component__title">
     <b>{{~this.config.name~}}</b>
