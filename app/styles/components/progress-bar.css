@@ -10,6 +10,11 @@
   margin-left: 6px;
   height: 100%;
   flex: 1;
+  flex-grow: 2;
+}
+.progress__rect:nth-of-type(2n) {
+  flex-grow: 1;
+  opacity: 0.5;
 }
 .progress__rect--DONE {
   background-color: var(--timer-color);

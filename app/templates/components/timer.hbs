@@ -31,7 +31,7 @@
     {{this.statusText}}
   </p>
   {{#if this.shouldShowTimer}}
-    <ProgressBar @total={{this.config.round}} @current={{this.currentRound}}/>
+    <ProgressBar @total={{this.config.round}} @current={{this.currentRound}} @timerState={{timerState}}/>
     <div class="timer-component__timer">
       <span class="timer-component__current-time">{{this.second}}</span>
     </div>

@@ -6,9 +6,9 @@ import { msToPrintable } from 'tabata/utils/time-functions'
 import { htmlSafe } from '@ember/template';
 import { cancel, later } from '@ember/runloop';
 
-const STATE_PREP = 'STATE_PREP'
-const STATE_WORKOUT = 'STATE_WORKOUT'
-const STATE_REST = 'STATE_REST'
+export const STATE_PREP = 'STATE_PREP'
+export const STATE_WORKOUT = 'STATE_WORKOUT'
+export const STATE_REST = 'STATE_REST'
 const PREP_DURATION = 3000
 const TIMER_INTERVAL = 10
 
