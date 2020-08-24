@@ -64,13 +64,15 @@
 {{/if}}
 {{#if this.isDeleteModalOpen}}
   {{#modal-dialog}}
-    <h4 class="ember-modal-dialog__header">are you sure to delete {{this.args.config.name}}?</h4>
+    <h4 class="ember-modal-dialog__header">are you sure to delete "{{this.args.config.name}}"?</h4>
     <div class="ember-modal-dialog__footer">
-      <button class="timer-component__button focusable" {{action (mut this.isDeleteModalOpen) false}}>
-        Nevermind, I will keep it
+      <button class="timer-component__button focusable btn btn--secondary"
+        {{action (mut this.isDeleteModalOpen) false}}>
+        Cancel
       </button>
-      <button class="timer-component__button focusable" onClick={{action this.onDelete}}>
-        Yes, delete the timer
+      <button class="timer-component__button focusable btn"
+        onClick={{action this.onDelete}}>
+        Continue
       </button>
     </div>
   {{/modal-dialog}}

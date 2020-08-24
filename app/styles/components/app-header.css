@@ -1,5 +1,6 @@
 /* html located at applicatiom.hbs */
 
+.ember-modal-overlay,
 .app {
   --header-height: 90px;
 }

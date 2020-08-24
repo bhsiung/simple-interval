@@ -8,17 +8,28 @@
   left: 0;
   right: 0;
   z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(0,0,0,.6);
 }
+@media (orientation: portrait) {
+  .ember-modal-dialog {
+    --dimension: 80vw;
+  }
+}
+@media (orientation: landscape) {
+  .ember-modal-dialog {
+    --dimension: calc(var(--body-height) * 0.8);
+  }
+}
 .ember-modal-dialog {
-  position: absolute;
+  font-size: calc(var(--dimension)/8);
   width: 50vw;
-  background: var(--color1);
-  left: 25vw;
-  top: 20vh;
+  background: var(--dialog-bg);
+  border: 1px solid #fff;
   padding: 1em;
   box-sizing: border-box;
-  font-size: 20px;
   display: grid;
   grid-gap: 1em;
 }
@@ -32,7 +43,12 @@
   margin: 0;
 }
 .ember-modal-dialog__footer {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+.ember-modal-dialog__footer>button {
+  margin-right: .5em;
+  font-size: calc(var(--dimension) / 16);
 }
 .ember-modal-dialog__url-container {
   position: relative;
@@ -51,9 +67,6 @@
   padding: .5em;
   top: 0;
   left: 0;
-}
-.ember-modal-dialog button {
-  font-size: 20px;
 }
 .ember-modal-dialog input[type="url"] {
 }
